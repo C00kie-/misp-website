@@ -94,4 +94,17 @@ Additionally, we've improved the UI to better indicate whether you're viewing an
 ![Extending Event parent](/img/blog/2.5.2/extending-event-parent.png)
 
 
+## First version of the RHEL installer added
+With the release of MISP 2.5.x, we've culled the number of target operating systems for the native installer scripts down to a list of just one entry, namely Ubuntu 24.04. Whilst we're rolling out MISP 2.5 on all of our instances, we don't want to leave RHEL users lagging too far behind, so we have released the first iteration of the installer with the 2.5.2 release, introducing a modernised stack also to the RHEL MISP community.
+
+The requirements so far are an up to date RHEL installation, with RHEL 9.4 as the minimum. The current installation still comes with some caveats, it's so far in experimental state until we get more feedback from the community, as well as one feature confirmed not working 100% correctly yet: Worker management using Supervisor works, but when SELinux is set to be enforced, MISP cannot determine the process owner of the worker process. This state is displayed via a new diagnostic state as seen below.
+
+![RHEL worker display](/img/blog/2.5.2/rhel_worker.png)
+
+An update script to bring MISP 2.4.x to 2.5.x on RHEL is still in the works and planned for a future update.
+
+## Long list of fixes
+
+This version also bring a host of fixes, reported and fixed by the community, both introduced with the switch to PHP8 as well as long standing issues from before. Dive into [the changelog](https://www.misp-project.org/Changelog.txt) for an exhaustive list of changes.
+
 Once again, thanks to Hack.lu/CTI-Summit attendees for all the feedback but also all the other contributors that helps us make the tool better. Thank you!
