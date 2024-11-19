@@ -1,18 +1,12 @@
 ---
 title: MISP 2.4.199 and 2.5.2 released - Post Hack.lu/CTI-Summit release with many new features
-banner: /img/blog/object-collapse.png
+banner: /img/blog/2.5.2/adhoc-trigger.png
 author:
  - MISP Project team
 date: 2024-11-19
 tags: ["MISP", "Threat Intelligence", "release" ]
 layout: post
 ---
-
-
-# Post Hack.lu/CTI-Summit release
-
-
-# MISP 2.4.200 and 2.5.2 release - Post Hack.lu/CTI-Summit release
 
 The [Hack.lu/CTI-Summit](https://hack.lu/) once again allowed us to get in touch with the community and sit down to talk about new features and issues to be implemented. As usual, it was a real pleasure to get that much concentrated feedback. In this release, we put a lot of effort trying to fix and create new content as much as possible based on the collected needs of the community.
 
