@@ -2,6 +2,212 @@ Changelog
 =========
 
 
+v2.5.2 (2024-11-19)
+-------------------
+
+New
+~~~
+- [RHEL installer] added. [iglocska]
+
+  - still in experimental state
+  - works on a fresh 9.4/9.5 rhel, but the worker management is still awkward (with selinux enabled it will always show the workers as indeterminable - but the controls work as expected)
+- [event-report:paste-image] Added preview of pasted image. [Sami
+  Mokaddem]
+
+  - Also, forces only one picture to be uploaded at a time
+- [event-report:editor] Allow pasting pictures and aliasing the ones not
+  saved as Attribute. [Sami Mokaddem]
+- [event:view] Improved UI for exendedBy and extends fields in event
+  meta. [Sami Mokaddem]
+- [event:view] Added button to go to extending view. [Sami Mokaddem]
+
+  - Extending view allows is the same feature as the extended view but instead of
+  merging the data of all children (extending events) to the parent event, it merges
+  the data from the parent event into the child
+- [galaxies:index] Warining for unknown clusters added. [Sami Mokaddem]
+- [events:add_misp_export] Added new setting
+  `MISP.allow_users_override_locked_field_when_importing_events` [Sami
+  Mokaddem]
+
+  - Allows users to override the state of the `locked` field when importing an event
+  - Once the setting is enabled, a checkbox will be offered to decide if the locked state of
+  of the imported event should be preserved or not.
+
+Changes
+~~~~~~~
+- [PyMISP] Bump version. [Raphaël Vinot]
+- [schema] updated. [iglocska]
+- [pymisp] bump. [iglocska]
+- [event-report:managed-imported-pictures] Allow to manually delete
+  pictures. [Sami Mokaddem]
+- [tools:MISPElementHTMLFormatterTool] Reduced font-size of MISP
+  element. [Sami Mokaddem]
+- [queryVersion] Bumped value. [Sami Mokaddem]
+- [rhel] better feedback on what can be determined about the worker
+  processes when SELinux is enabled. [iglocska]
+
+  - I'm being repressed and censored.
+- [event-report:download-as-pdf] Greatly improved the feature. [Sami
+  Mokaddem]
+
+  - Support replacement of template variables
+  - Pictures (from attribute/imported)
+  - Convert custom MD syntax
+- [event-reports:download-as-pdf] Added more feedback in the UI. [Sami
+  Mokaddem]
+- [ui:view-galaxy-matrix] Smarter display of matrix picker. [Sami
+  Mokaddem]
+- [workflow:adhoc] Changed title to show the Ad-Hoc context. [Sami
+  Mokaddem]
+- [workflow:run_workflow] Added more detailed in the run adhoc workflow
+  in event view. [Sami Mokaddem]
+- [internal] Code cleanup. [Jakub Onderka]
+- [internal] Better error message when fetching remote URL with loop.
+  [Jakub Onderka]
+- [warninglists] fail gracefully when deserialization fails, addresses
+  #9978. [iglocska]
+
+  - also, log the entry that failed in error.log
+- [internal] Cleanup memory for simdjson. [Jakub Onderka]
+- [internal] Try to release pointer in curl client to local function to
+  avoid circular reference and releasing memory. [Jakub Onderka]
+- [internal] Better debug messages for sync. [Jakub Onderka]
+
+Fix
+~~~
+- [misp-js:screenshotPopup] Correctly take the extension of the
+  (potential) path. [Sami Mokaddem]
+- [event-reports:isDownloadModuleAvailable] Typo in usage of
+  Module->canUse. [Sami Mokaddem]
+- [events-report:js-pasteImg] Gracefully handle if no picture are
+  pasted. [Sami Mokaddem]
+- [event-report:replaceWithTemplateVars] Gracefully handle if no user
+  variable. [Sami Mokaddem]
+- [rhel installer] hash fix, similar to the ubuntu installer fix as
+  reported in #10040. [iglocska]
+- [ubuntu installer] hash check fixed, fixes #10040. [iglocska]
+
+  - as discovered by @jgthornb
+- [Attribute search] regression due to merge issue with 2.4 fixes
+  #10042. [iglocska]
+- Show results when attribute search has no filters set. [Luciano
+  Righetti]
+- [event-reports:download-as-gfm] Correctly replace Attribute picture
+  syntax. [Sami Mokaddem]
+- [galaxy:attacjExtendFromInfo] Removed ambiguous column clause for
+  UUID. [Sami Mokaddem]
+- [statistics:galaxy-matrix] Default to unfiltered view for Mitre ATT&CK
+  matrix. [Sami Mokaddem]
+- [objects:createFromFreetext] Make sure all the event fields are
+  available before saving. [Sami Mokaddem]
+- [galaxy:view] Keep API response format as in v2.4. [Sami Mokaddem]
+- [galaxy-cluster-relation:edit_relation] Fixed ambiguous column name.
+  [Sami Mokaddem]
+- [galaxy:load_galaxies] Force distribution to be 3 for default
+  galaxies. [Sami Mokaddem]
+- [galaxy:load_galaxies] Force org_id to be 0 for default galaxies.
+  [Sami Mokaddem]
+- [workflow-modules] Replaced more `Attribute` by `MispAttribute` [Sami
+  Mokaddem]
+- [workflow] Replaced `Attribute` by `MispAttribute` [Sami Mokaddem]
+- [galaxy:galaxy_matrix] Fixed overflow issue and matrix type picking in
+  static context. [Sami Mokaddem]
+- [galaxy] Renamed `Attribute` into `MispAttribute` [Sami Mokaddem]
+- [galaxy:validation] Allow creating galaxy without kill_chain. [Sami
+  Mokaddem]
+- [UI] Remove broken submit button when adding object reference. [Jakub
+  Onderka]
+- [feed edit] view fixed when rules are not set, fixes #10013.
+  [iglocska]
+- [attribute search] avoid the fix on 2.4-develop. [iglocska]
+- [Upgrade] Fix conditionals in 2.5 upgrade script. [Tom King]
+- [reverted freetext mistake] fixed again. [iglocska]
+
+  - how on earth did this come back?
+- [internal] Uninitialized string offset: 0. [Jakub Onderka]
+
+Other
+~~~~~
+- Merge branch 'develop' into 2.5. [iglocska]
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge branch 'feature/eventreport-pasting-pics' into develop. [Sami
+  Mokaddem]
+- Merge remote-tracking branch 'origin/develop' into
+  feature/eventreport-pasting-pics. [Sami Mokaddem]
+- Merge branch '2.5' into develop. [iglocska]
+- Merge pull request #10018 from sidxparab/fix-ubuntu-2404-installer.
+  [Andras Iklody]
+
+  Update INSTALL.ubuntu2404.sh
+- Update INSTALL.ubuntu2404.sh. [Siddhesh Parab]
+
+  1) If a PECL installation or configuration command fails, the entire installer script exits out. Added `|| true` to ensure the script continues even when the command fails
+
+  2) The above listed reason is same for modifications to installation of `SSDEEP`
+
+  3) Updated the `Baseurl` MISP setting to discard the deprecated method and use the latest one. Also, BaseURL needs to be specified using the protocol.
+
+  4) Updated the `Security.password_policy_complexity` parameter which was erroring out due to special characters not being escaped
+- Merge pull request #10028 from brlogan/patch-1. [Jakub Onderka]
+
+  Slight improvements to user profile notification emails
+- Improve user profile notification emails. [Bradley Logan]
+- Update LdapAuth doc. [Luciano Righetti]
+- Merge remote-tracking branch 'origin/develop' into develop. [Sami
+  Mokaddem]
+- Merge pull request #10038 from MISP/add-direct-ldap-auth. [Luciano
+  Righetti]
+
+  add direct LDAP auth
+- Add docs. [Luciano Righetti]
+- Change defaults, consistent variable names. [Luciano Righetti]
+- Factor, handle ldap user memberships. [Luciano Righetti]
+- Add direct LDAP auth. [Luciano Righetti]
+- Merge branch 'feature/adhoc-workflows' into develop. [Sami Mokaddem]
+- Merge branch 'feature/tags-on-eventreport' into develop. [Sami
+  Mokaddem]
+- Merge remote-tracking branch 'origin/feature/variables-in-reports'
+  into develop. [Sami Mokaddem]
+- Merge pull request #10034 from JakubOnderka/code-cleanup-vol2. [Jakub
+  Onderka]
+
+  chg: [internal] Code cleanup
+- Merge pull request #10033 from JakubOnderka/better-error. [Jakub
+  Onderka]
+
+  chg: [internal] Better error message when fetching remote URL with loop
+- Merge pull request #10032 from JakubOnderka/object-references-fix.
+  [Jakub Onderka]
+
+  fix: [UI] Remove broken submit button when adding object reference
+- Merge branch '2.5' into develop. [Luciano Righetti]
+- Keep 2.5 version. [Luciano Righetti]
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge branch '2.5' into develop. [iglocska]
+- Merge branch '2.5' into develop. [iglocska]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [iglocska]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [iglocska]
+- Merge pull request #9997 from JakubOnderka/sync-debug. [Jakub Onderka]
+
+  chg: [internal] Better debug messages for sync
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge branch '2.5' into develop. [iglocska]
+- Merge pull request #9950 from tomking2/bug/2.5-install. [Andras
+  Iklody]
+
+  fix: [Upgrade] Fix conditionals in 2.5 upgrade script
+- Merge branch '2.5' into develop. [iglocska]
+- Merge pull request #9995 from JakubOnderka/exception-uninintialized-
+  offset. [Jakub Onderka]
+
+  fix: [internal] Uninitialized string offset: 0
+
+
 v2.4.200 (2024-11-19)
 ---------------------
 
@@ -304,8 +510,21 @@ Other
 v2.5.1 (2024-10-18)
 -------------------
 
+New
+~~~
+- [test] Add test for issue #9989. [Jakub Onderka]
+
 Changes
 ~~~~~~~
+- [version] bump. [iglocska]
+- [PyMISP] Bump. [Raphaël Vinot]
+- [internal] Use more methods from PHP8 for ComplexTypeTool. [Jakub
+  Onderka]
+- [internal] Add support for zstd compressed responses. [Jakub Onderka]
+- [internal] Add support for Randomizer for PHP 8.3. [Jakub Onderka]
+- [security] Update unsupported Ubuntu versions in security audit.
+  [Jakub Onderka]
+- [internal] Add polyfill for PHP8 methods. [Jakub Onderka]
 - [internal] Use methods from PHP8. [Jakub Onderka]
 - [internal] Benchmark code cleanup. [Jakub Onderka]
 
@@ -314,6 +533,11 @@ Fix
 - [INSTALL.ubuntu2404.sh] potential fix for #9967. [Andras Iklody]
 
   Weird that it works on most systems though...
+- [diagnostics] Do not check if attachment dir is writeable if is s3 or
+  we use different location. [Jakub Onderka]
+- [internal] For reading uptime use /proc/uptime and not uptime process.
+  [Jakub Onderka]
+- [internal] Adding tags to attributes. [Jakub Onderka]
 - [attribute->mispattribute] broken fix reverted. [iglocska]
 - [event:freeTextImport] Repair feature due to class name change. [Sami
   Mokaddem]
@@ -323,6 +547,12 @@ Fix
 
 Other
 ~~~~~
+- Merge branch 'develop' into 2.5. [iglocska]
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge branch 'develop' into 2.5. [iglocska]
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge branch '2.5' into develop. [iglocska]
 - Merge pull request #9981 from cudeso/patch-2. [Alexandre Dulaunoy]
 
   Update defaults.json
@@ -331,6 +561,30 @@ Other
   Enable delta merge on URLHaus feed to prevent the event from growing indefinite
 - Merge branch '2.5' of github.com:MISP/MISP into 2.5. [iglocska]
 - Merge branch 'develop' into 2.5. [iglocska]
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge pull request #9992 from JakubOnderka/ref-9989. [Jakub Onderka]
+
+  Ref 9989
+- Fix email refang regex. [goodlandsecurity]
+- Merge pull request #9988 from JakubOnderka/http-zstd. [Jakub Onderka]
+
+  chg: [internal] Add support for zstd compressed responses
+- Merge pull request #9987 from JakubOnderka/security-audit-update.
+  [Jakub Onderka]
+
+  Security audit update
+- Update defaults.json. [Koen Van Impe]
+
+  Enable delta merge on URLHaus feed to prevent the event from growing indefinite
+- Merge pull request #9979 from JakubOnderka/fix-adding-attributes.
+  [Jakub Onderka]
+
+  fix: [internal] Adding tags to attributes
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge pull request #9968 from JakubOnderka/php8-polyfill. [Jakub
+  Onderka]
+
+  chg: [internal] Add polyfill for PHP8 methods
 - Merge branch '2.5' into develop. [iglocska]
 - Merge branch 'develop' into 2.5. [iglocska]
 - Merge branch 'develop' of github.com:MISP/MISP into develop.
