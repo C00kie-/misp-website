@@ -102,3 +102,11 @@ An update script to bring MISP 2.4.x to 2.5.x on RHEL is still in the works and 
 This version also bring a host of fixes, reported and fixed by the community, both introduced with the switch to PHP8 as well as long standing issues from before. Dive into [the changelog](https://www.misp-project.org/Changelog.txt) for an exhaustive list of changes.
 
 Once again, thanks to Hack.lu/CTI-Summit attendees for all the feedback but also all the other contributors that helps us make the tool better. Thank you!
+
+# MISP galaxy, MISP objects and MISP taxonomies new version released
+
+- [MISP Galaxy 2024110700 has been released with many updates and improvements](https://github.com/MISP/misp-galaxy/releases/tag/2024110700)
+- [MISP Taxonomies 2024111100 released](https://github.com/MISP/misp-taxonomies/releases/tag/2024111100)
+- [MISP objects release 2024111100](https://github.com/MISP/misp-objects/releases/tag/2024111100)
+
+Starting with this release, MISP galaxy, misp taxonomies and misp objects will be tagged using the %Y%m%d00 format for each new version. This change enables users to easily verify whether they are using the latest release. The versioning is now independent of the MISP core software, as the project is also utilized as a standalone tool in various other applications. For details about the changes, feel free to review each release.
