@@ -1,6 +1,65 @@
 # Changelog
 
 
+## %%version%% (unreleased)
+
+### Changes
+
+* [zscaler] add the missing script for zscaler source generation. [Alexandre Dulaunoy]
+
+* [update] updated. [Alexandre Dulaunoy]
+
+* [lists] updated. [Alexandre Dulaunoy]
+
+* [warning-lists] updated. [Alexandre Dulaunoy]
+
+### Other
+
+* Merge branch 'main' of github.com:MISP/misp-warninglists. [Alexandre Dulaunoy]
+
+* Merge pull request #289 from Showfom/patch-1. [Alexandre Dulaunoy]
+
+  Update Apple IP ranges
+
+* Update list.json. [Xiufeng Guo]
+
+* Update Apple IP ranges. [Xiufeng Guo]
+
+  Update from ARIN allocation for Apple
+
+* Merge branch 'goodlandsecurity-living-off-trusted-sites' [Alexandre Dulaunoy]
+
+* Merge branch 'living-off-trusted-sites' of https://github.com/goodlandsecurity/misp-warninglists into goodlandsecurity-living-off-trusted-sites. [Alexandre Dulaunoy]
+
+* Include LOTS project source. [goodlandsecurity]
+
+* Add living off trusted sites project domains. [goodlandsecurity]
+
+* Merge pull request #287 from karenyousefi/main. [Alexandre Dulaunoy]
+
+  Update
+
+* Update to V7. [Karen Yousefi]
+
+* Update to V19. [Karen Yousefi]
+
+* Merge pull request #286 from Th4nat0s/ymenfautplus. [Alexandre Dulaunoy]
+
+  make some updates to link of blogpost
+
+* Make some updates to link of blogpost. [Thanat0s]
+
+* Merge pull request #284 from karenyousefi/main. [Alexandre Dulaunoy]
+
+  update
+
+* Merge branch 'MISP:main' into main. [Karen Yousefi]
+
+* Update to V6. [Karen Yousefi]
+
+* Update to V18. [Karen Yousefi]
+
+
 ## v2.4.197 (2024-09-02)
 
 ### Changes

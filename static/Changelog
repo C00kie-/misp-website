@@ -2,7 +2,652 @@ Changelog
 =========
 
 
-v2.4.193 (2024-06-06)
+%%version%% (unreleased)
+------------------------
+
+Fix
+~~~
+- [Warninglists] make it API friendly. [iglocska]
+
+
+v2.4.198 (2024-09-13)
+---------------------
+
+New
+~~~
+- [attribute type] `dom-hash` is a structural fingerprint of HTML's
+  Document Object Model. [Alexandre Dulaunoy]
+
+  `dom-hash` is a structural fingerprint of the HTML's Document Object
+  Model (DOM) originaly developed by CERT.PL
+
+  The fingerprint is calculated by extracting all the tag names (ignoring
+  the content and attribute of the HTML Page). The tag names are
+  concatenated with a pipe value `|`, hash with the SHA-256 algorithm
+  and truncated with the first 32 characters.
+
+  Software like LookyLoo[1] implemented the algorithm which can be used
+  in MISP to share and correlate information about similar web pages (e.g.
+  phishing pages).
+
+  [1] https://github.com/Lookyloo/lookyloo/commit/466a3c56148f2ddb911620fd24e4f0c9d602a6a3
+
+Changes
+~~~~~~~
+- [version] bump. [iglocska]
+- [PyMISP] Bump. [Raphaël Vinot]
+- [internal] Simplify cake.php and load dispatcher from absolute path.
+  [Jakub Onderka]
+- [internal] Server sync debug message when pushing events. [Jakub
+  Onderka]
+- [PyMISP] updated to the latest version. [Alexandre Dulaunoy]
+- [ui] Better description for server setting. [Jakub Onderka]
+
+Fix
+~~~
+- [event-report:edit] Take first Attribute value from an object if
+  unable to get the priority value. [Sami Mokaddem]
+- [event-report:edit] Take first Attribute value from an object if
+  unable to get the priority value. [Sami Mokaddem]
+- [security] Ensure proper sanitization of sensitive fields in user-
+  login-profiles. [Sami Mokaddem]
+
+  Prevent other org-admins (from the same org) to view sensitive fields of
+  other org-admins when they confirmed their login session
+
+  - As reported by Sharad Kumar Dahal of Green Tick Nepal Pvt. Ltd
+- [users:view_login_history] Column not found error while not being a
+  site-admin. [Sami Mokaddem]
+
+  By ensuring the user's Role is included in the result
+- [users:index] Redact autkey visibility to other org-admin in the same
+  organisation. [Sami Mokaddem]
+
+  - Since by design, org admins can already change the password of other
+  org-admins (from the same org), this is considered as a fix.
+- [security] ACL ignored on GUI attribute search. [iglocska]
+
+  - as reported by KZ-CERT, the National CERT Team of Kazakhstan
+- [attribute search] fixes for invalid returns on deleted = [0,1], fixes
+  #9866. [iglocska]
+
+  - object level deleted field check would block the inclusion of non object attributes
+- [feed] old path replaced with official misp-website path. [Alexandre
+  Dulaunoy]
+- [baseurl] preference changed to MISP.baseurl, fixes #9895. [iglocska]
+
+  - external_baseurl no longer used as a prefered source
+    - meant to be informational only for sharing groups
+- [internal] Throw exception in GpgTool if GnuPG.homedir is empty.
+  [Jakub Onderka]
+- [internal] Throw exception in EncryptedValue invalid state. [Jakub
+  Onderka]
+
+Other
+~~~~~
+- Merge branch 'develop' into 2.4. [iglocska]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [iglocska]
+- Merge branch '2.4' into develop. [Alexandre Dulaunoy]
+- Merge branch 'fix/authkey-visibility' into develop. [Sami Mokaddem]
+- Merge pull request #9903 from JakubOnderka/shell-dispatcher. [Jakub
+  Onderka]
+
+  chg: [internal] Simplify cake.php and load dispatcher from absolute path
+- Merge branch '2.4' into develop. [iglocska]
+- Merge pull request #9685 from JakubOnderka/push-server-sync-debug.
+  [Jakub Onderka]
+
+  chg: [internal] Server sync debug message when pushing events
+- Merge branch '2.4' into develop. [iglocska]
+- Merge pull request #9890 from JakubOnderka/log-unpublished. [Jakub
+  Onderka]
+
+  chg: [ui] Better description for server setting
+- Merge pull request #9896 from JakubOnderka/encrypt-exception. [Jakub
+  Onderka]
+
+  Encrypt exception
+- Merge pull request #9897 from MISP/2.4. [Jakub Onderka]
+
+  Merge 2.4 into develop
+
+
+v2.4.197 (2024-09-02)
+---------------------
+
+New
+~~~
+- Add config option user_org_uuid_in_response_header, allowing to
+  include a response header with the requesting user's org UUID. [Jeroen
+  Pinoy]
+- [build] Show required STIX dependencies versions. [Jakub Onderka]
+
+Changes
+~~~~~~~
+- [version] bump. [iglocska]
+- [warning-list] updated. [Alexandre Dulaunoy]
+- [taxonomies] updated to the latest version. [Alexandre Dulaunoy]
+- [misp-galaxy] updated. [Alexandre Dulaunoy]
+- [PyMISP] Bump. [Raphaël Vinot]
+- [internal] Log when event will not be published. [Jakub Onderka]
+- [global_menu:bookmark] Added comment field as dropdown element's
+  title. [Sami Mokaddem]
+- [db:bookmark] Added DB upgrade to support bookmarks' comment. [Sami
+  Mokaddem]
+- [bookmark:view] Added missing comma for new comment function. [Jan Z.]
+
+  Added a missing comma for the new comment function
+- [bookmark:View] Added field for Comment. [Jan Z.]
+
+  Added a field for comments for bookmarks
+- [bookmark:index] Added a field for Comment. [Jan Z.]
+
+  Added a field to display comment to the Bookmarks
+- [bookmark:add] Added a comment field. [Jan Z.]
+
+  Added a field to add and edit comments for bookmarks.
+- [misp-object] updated to the latest version. [Alexandre Dulaunoy]
+
+Fix
+~~~
+- [UI/footer] Avoid confusion for some users. [Alexandre Dulaunoy]
+
+  Verse 1
+  I was sittin' at my desk, feeling mighty fine,
+  Encryption's my jam, yeah, it’s my time to shine.
+  But then I hit a wall, a digital brick,
+  I mixed up my keys, oh what a trick!
+
+  Pre-Chorus
+  Sent my own key to the server’s side,
+  Now my secrets ain’t safe, and I wanna hide.
+  What a mix-up, what a shame,
+  Who’s to blame in this encryption game?
+
+  Chorus
+  Oh, PGP, don’t play tricks on me,
+  Keep my secrets locked, let my mind be free.
+  I sent my own key, oh what a fuss,
+  When I needed the server’s, now I’m outta luck!
+
+  Verse 2
+  I tried to decrypt, but nothing would show,
+  I thought it was the server, but now I know.
+  My own key’s sittin' there, feelin' so right,
+  But it’s not the one I need to lock up tight.
+
+  Pre-Chorus
+  Sent my secrets into the cloud,
+  But they bounced right back, I ain’t so proud.
+  What a mix-up, what a twist,
+  In the encryption dance, I must persist!
+
+  Chorus
+  Oh, PGP, don’t play tricks on me,
+  Keep my secrets locked, let my mind be free.
+  I sent my own key, oh what a fuss,
+  When I needed the server’s, now I’m outta luck!
+
+  Bridge
+  Next time I’ll check, I’ll double-click twice,
+  Make sure the right key’s rollin’ the dice.
+  No more confusion, no more regret,
+  I’ll get this encryption thing down just yet!
+
+  Chorus
+  Oh, PGP, don’t play tricks on me,
+  Keep my secrets locked, let my mind be free.
+  I sent my own key, oh what a fuss,
+  When I needed the server’s, now I’m outta luck!
+
+  Outro
+  So here’s my lesson, loud and clear,
+  In the world of keys, gotta steer clear.
+  Of mix-ups and mess-ups, it’s a tricky ride,
+  But I’ll master this PGP with pride!
+- [ioc import] Check if provided XML is valid. [Jakub Onderka]
+- [schema] Schema version. [Jakub Onderka]
+- [ui] Returned data are already parsed for tag popover. [Jakub Onderka]
+- [bookmarks:add] Lower-cased comment field. [Sami Mokaddem]
+- [sighting] Correctly pull sightings per requested event. [Tom King]
+- [bookmarks] fix an issue with overly verbose returns from bookmarks
+  when shared with the org. [iglocska]
+
+  - as reported by Sharad Kumar Dahal of Green Tick Nepal Pvt. Ltd.
+- [feed] Feed pull, check events against rules if rules specified.
+  [Benni0]
+
+Other
+~~~~~
+- Merge branch 'develop' into 2.4. [iglocska]
+- Merge branch 'develop' into pr-9893. [Sami Mokaddem]
+- Merge branch 'develop' into pr-9885. [Sami Mokaddem]
+- Merge pull request #9889 from JakubOnderka/log-unpublished. [Jakub
+  Onderka]
+
+  chg: [internal] Log when event will not be published
+- Merge pull request #9888 from JakubOnderka/tag-popover-fix. [Jakub
+  Onderka]
+
+  fix: [ui] Returned data are already parsed for tag popover
+- Merge branch 'pr-9841' into develop. [Sami Mokaddem]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [iglocska]
+- Merge branch '2.4' into develop. [Alexandre Dulaunoy]
+- Merge pull request #9876 from tomking2/bug/sighting_rest_search.
+  [Andras Iklody]
+
+  Fixes performance of sightings restSearch when performing MISP sync
+- Merge pull request #9875 from JakubOnderka/stixtest-build. [Jakub
+  Onderka]
+
+  new: [build] Show required STIX dependencies versions
+- Merge branch '2.4' into develop. [iglocska]
+- Merge branch '2.4' of github.com:MISP/MISP into 2.4. [iglocska]
+- Merge pull request #9881 from andrewdhicks/fix-sightings-rest-search-
+  org. [Andras Iklody]
+
+  Fix sightings rest search by org uuid
+- Merge branch 'MISP:2.4' into fix-sightings-rest-search-org. [Andrew
+  Hicks]
+- Fix negation of org id for sightings restSearch. [Andrew Hicks]
+
+
+v2.4.196 (2024-08-21)
+---------------------
+
+New
+~~~
+- [decaying model] Add a DecayingModel based on true positive and false
+  positive sightings. [Marcel Slotema]
+- [log search] added optional hh:mm:ss accuracy. [iglocska]
+
+  - also some refactoring to deal with the boat-load of copy-pasta
+
+  ░░░░░░░░░░░░  ░░      ░░░░    ░░░░
+  ░░░░░░░░░░          ░░▒▒▓▓██████░░    ░░▒▒██████░░                ░░
+  ░░░░░░░░░░          ░░████      ██░░░░░░██      ██░░
+  ░░░░░░░░░░░░        ▒▒████    ████░░░░▒▒██    ████░░
+  ░░░░░░░░░░          ▒▒██▓▓      ██░░░░▒▒██      ██░░
+  ░░░░░░░░              ▒▒████████░░    ▒▒████████▒▒
+  ░░░░  ░░    ░░    ░░  ▒▒▒▒██░░██████░░▒▒██░░▓▓▓▓░░
+  ░░░░  ░░        ░░▒▒████████████░░░░██████  ▓▓██████▒▒
+  ░░░░░░░░      ▒▒████▒▒░░  ░░░░██░░██░░░░░░████▒▒    ▒▒▓▓
+  ░░░░░░    ░░▒▒██░░██▒▒▓▓████░░░░██░░░░██░░██▒▒  ▒▒██▓▓░░██
+  ░░░░  ░░░░▒▒██▒▒██░░  ▓▓██▒▒██  ░░████░░██░░  ▒▒▓▓▒▒▓▓████░░░░▒▒░░
+  ░░  ░░▒▒██████░░░░  ▓▓▓▓▒▒▒▒▒▒██░░░░░░░░██████▓▓▒▒▒▒▒▒▓▓██▒▒▓▓██████
+      ▒▒██░░▓▓████████▓▓▒▒▒▒▒▒▒▒██████████░░██▓▓▒▒▒▒▒▒▒▒▒▒██████░░░░██
+  ░░▒▒▓▓▒▒░░▓▓██▒▒██▓▓▒▒▒▒▒▒▒▒▒▒██░░░░░░██░░▓▓▓▓▒▒▒▒▒▒▒▒▒▒██  ░░████
+  ░░▒▒██░░▓▓▓▓██░░▒▒██▓▓████████░░░░██████░░░░▒▒██▒▒▒▒▒▒██░░░░██
+  ░░▒▒██░░██░░▒▒██░░░░██▒▒  ░░░░██████▒▒  ██▓▓▒▒████████░░████░░
+  ░░▒▒██▒▒██▒▒▒▒██████░░▓▓████░░░░██░░██░░██▓▓  ░░██▒▒████░░
+  ░░▒▒██████████░░▒▒▒▒██████░░██░░░░████░░  ░░██░░  ██░░
+  ░░░░▒▒▓▓██▒▒░░░░████░░░░░░██░░██░░██▓▓██░░░░████  ██▒▒░░
+  ░░░░▒▒██░░██████▓▓▒▒██████▒▒░░██░░██▓▓██  ░░████░░  ██░░
+  ░░░░▒▒██▓▓▒▒▒▒▒▒▒▒██░░░░░░░░██░░░░██▓▓████  ██▓▓██  ██░░
+  ░░░░░░▒▒▒▒  ░░▒▒██▒▒░░▓▓██████  ██▓▓▒▒████  ██▓▓██░░▓▓▓▓
+  ░░░░░░░░░░░░░░▒▒██░░████████░░██▒▒▒▒████▒▒██▓▓▒▒██░░██▓▓
+  ░░░░░░░░  ▒▒████░░░░▓▓▓▓▓▓████░░▒▒▒▒██▒▒▒▒██▓▓██░░▓▓▓▓
+  ░░░░░░░░▒▒▒▒████░░  ██▓▓▒▒██▓▓░░░░▒▒██▒▒▒▒██▒▒██░░▒▒▓▓
+  ░░░░░░░░▒▒██░░░░▒▒██▓▓░░░░░░░░░░░░  ████▓▓▒▒▒▒██░░▓▓▓▓
+  ░░░░░░░░▒▒████████░░░░  ░░░░░░░░░░          ░░██████░░
+- [review user logs] made the button useful. [iglocska]
+
+  - was linking to the log index without any filters before
+  - now links to any changes affecting the user (model = User, model_id = user_id)
+  - is aware of the use of the new audit log system, linking to the most useful logs
+  - future improvements: add a secondary button for searches on the user email address in the logs by creation
+
+Changes
+~~~~~~~
+- [PyMISP] Bump. [Raphaël Vinot]
+- [version] bump. [iglocska]
+- [decaying-model-formulas] Catches undefined indexes. [Sami Mokaddem]
+- [decaying tool] Update sliders when a textbox is changed. [Marcel
+  Slotema]
+- [attributes:restSearch] Added X-Skipped-Elements-Count Header.
+  [Benni0]
+
+  Added the X-Skipped-Elements-Count header, which should indicate how many items are skipped due to postprocessing.
+  With this header, the client should be able to do proper pagination and can stop iteration when the amount of items,
+  including the skipped items, is lower than the limit
+- [internal] Include in logged message subject and e-mail address when
+  sending e-mail. [Jakub Onderka]
+- [misp-stix] Bumped latest tagged version. [Christian Studer]
+- [baseurl handling] fixed for reverse proxies. [iglocska]
+
+  - no more weird redirects that drop ports / externally requested baseurls from redirect links
+  - Thanks to @github-germ (Mitch Germansky) for the long, in-depth debug session and testing all the hacky attempts at fixing it
+- [warning-list] updated to the latest version. [Alexandre Dulaunoy]
+- [misp-object] updated to the latest version. [Alexandre Dulaunoy]
+- [misp-galaxy] updated. [Alexandre Dulaunoy]
+- [misp-stix] Bumped latest submodule version. [Christian Studer]
+- [misp-stix] Bumped latest submodule version including some fixes.
+  [Christian Studer]
+- [Attributes restSearch] added sort support for publish_timestamp.
+  [Benni0]
+
+Fix
+~~~
+- [misp-stix] Bumped fixed version. [Christian Studer]
+- [stix2 import] Updated STIX 2 parsers usage following recent changes
+  on misp-stix. [Christian Studer]
+- [priority order in beforefilter] move the baseurl view var setting
+  further up in the chain. [iglocska]
+
+  - redis errors with benchmarking enabled could throw a notice error about the baseurl not being set for the views otherwise
+- [image helper] allow for variable width org logos without overlapping
+  the text. [iglocska]
+- [misp-stix] Bumped latest version including recent fixes. [Christian
+  Studer]
+- [workflow:getEnabledModules] Make sure to return the correct type if
+  redis fails to load. [Sami Mokaddem]
+- [cli setting change] in the previous commit fixed. [iglocska]
+
+  - Thanks @ostefano for noticing my fuckup
+- [workflow:getEnabledModules] Make sure to return the correct type if
+  redis fails to load. [Sami Mokaddem]
+- [settings] multiple fixes to changing settings on the instance.
+  [iglocska]
+
+  - fix an issue with simplebackgroundjobs setting changes barfing
+  - add a proper CLI check rather than that puzzling fileOnly shit we've had before
+- [attribute search ordering fix] [iglocska]
+- [attribute search] id based sliding window reverted. [iglocska]
+
+  - sadly the ordering is more expensive than the gain it looks like...
+
+Other
+~~~~~
+- Merge branch 'develop' into 2.4. [iglocska]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [iglocska]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [Christian Studer]
+- Merge branch 'env_dependencies' into develop. [iglocska]
+- Merge branch 'develop' into env_dependencies. [iglocska]
+- Merge branch 'attributeRestsearchOrder' into develop. [iglocska]
+- Merge branch 'develop' into attributeRestsearchOrder. [iglocska]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [iglocska]
+- Merge branch 'pr-9849' into develop. [Sami Mokaddem]
+- Merge branch 'x-skipped-elements-count' into develop. [iglocska]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [iglocska]
+- Merge pull request #9865 from JakubOnderka/log-exception-email.
+  [Andras Iklody]
+
+  chg: [internal] Include in logged message subject and e-mail address …
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [Christian Studer]
+- Merge branch 'dependencies' into develop. [iglocska]
+- Default to env dependencies, and fallback to submodules' [Stefano
+  Ortolani]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [Alexandre Dulaunoy]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [Christian Studer]
+- Merge branch '2.4' of github.com:MISP/MISP into 2.4. [iglocska]
+- Merge branch 'develop' into 2.4. [iglocska]
+- Merge branch '2.4' into develop. [Alexandre Dulaunoy]
+- Merge pull request #9862 from kdrypr/patch-3. [Alexandre Dulaunoy]
+
+  Update defaults.json
+- Update defaults.json. [Kadir YAPAR]
+
+  changed company and community
+- Merge pull request #9859 from ostefano/openapi. [Andras Iklody]
+
+  Fix openapi specification
+- Fix openapi specification. [Stefano Ortolani]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [Christian Studer]
+- Merge branch '2.4' into develop. [iglocska]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [Christian Studer]
+- [chg] Modified Attributes to support mutlicolumn and
+  Model.publish_timestamp sorting. [Benni0]
+- [chg:AppModel] Modified findOrder to support multicolumn sorting.
+  [Benni0]
+
+
+v2.4.195 (2024-07-26)
+---------------------
+
+New
+~~~
+- [legacy attribute search] internals added for some edge cases.
+  [iglocska]
+
+  - new setting allows an admin to flip the search strategy to one that mimics the old behaviour
+  - refrains from using subqueries
+- [attribute search and correlation] improvements. [iglocska]
+
+  - added correlationRules system
+    - create rules for non correlating events (such as events from the same org, events with a certain string in the event info field, or just manually chosen event IDs)
+    - should help combat recurring data in certain feeds / providers causing slowdowns
+  - rework of the attribute pagination
+    - use the memory limit based bucketing also when limits are set
+    - better handling of offsets (ordering + using lowest IDs for the next batch instead of mysql offsets)
+- [logging] Added more data to logging entry and new option to log used
+  authkeys in clear-text. [Sami Mokaddem]
+
+Changes
+~~~~~~~
+- [version] bump. [iglocska]
+- [misp-galaxy] updated to the latest version. [Alexandre Dulaunoy]
+- [warning-list] updated to the latest version. [Alexandre Dulaunoy]
+- [PyMISP] fix issue with buggy template. [Raphaël Vinot]
+- [PyMISP] Bump. [Raphaël Vinot]
+- [db schema] bumped. [iglocska]
+- [misp-objects] updated to the latest version. [Alexandre Dulaunoy]
+- [workflow:webhook] Correctly send JSON data if content_type is set to
+  application/json. [Sami Mokaddem]
+- [docs] add an example of S/MIME self-signed key for your MISP.
+  [Alexandre Dulaunoy]
+- [pymisp] bump. [iglocska]
+- [pymisp] bump. [iglocska]
+- [pymisp] bump. [iglocska]
+- [pymisp] bump. [iglocska]
+- [pymisp] bump. [iglocska]
+- [pymisp] bump. [iglocska]
+
+  - let's see if this fixes the tests
+- [PyMISP] Test search & publish. [Raphaël Vinot]
+- [logos] added CCB's logo as per request to the defaults. [iglocska]
+
+  - also fixed a gitignore snafu
+- [PyMISP] Bump changelog. [Raphaël Vinot]
+- [misp-objects] updated to the latest version. [Alexandre Dulaunoy]
+
+Fix
+~~~
+- Unify event create/update response. [Luciano Righetti]
+- Openapi path parameters are required. [Luciano Righetti]
+- Wrong parameter id in taxonomy endpoints. [Luciano Righetti]
+- Analyst data openapi spec. [Luciano Righetti]
+- [restClient:queryBuilder] Stop prefixing the scope for the fields in
+  restSearch context. [Sami Mokaddem]
+- [index hint] using mysql extended may be wrong. [iglocska]
+
+  - if attributes.deleted isn't indexed it would barf before
+  - added a check for the existence of the index
+- [publishing] if the publish timestamp can't be updated, throw an error
+  during the in-line publishing. [iglocska]
+- [fetchEvent] defaulting out conditions to null rather than false.
+  [iglocska]
+
+  - enabled the false behaviour that false would simply be ignored
+  - this caused published = false via the API to default to the published flag not being set at all
+  - new behaviour works same as 0/1 values for booleans
+- [Bookmark view] typo fixed. [Alexandre Dulaunoy]
+- [internal] more fixes to the deleted flag. [iglocska]
+
+  - this sure wouldn't be such a clusterfuck if the office had an AC and we weren't sitting in 28.3C
+- [deleted filter] fix for the previous commit. [iglocska]
+
+  - modify a local variable rather than the passed-by-reference params array
+- [event] Making sure we attach Analyst Data to Event Reports when
+  fetching Events. [Christian Studer]
+- [internal filtering] handle deleted cases better across the various
+  search endpoints. [iglocska]
+
+  - object restSearch() was not correcty adhering to the deleted:1 parameter among others
+- Unify event create/update response. [Luciano Righetti]
+- Openapi path parameters are required. [Luciano Righetti]
+- Wrong parameter id in taxonomy endpoints. [Luciano Righetti]
+- Analyst data openapi spec. [Luciano Righetti]
+- [ACL] user add always accessible to site admins. [Andras Iklody]
+- [issue] Update config.yml. [Alexandre Dulaunoy]
+
+  Removal of the discussion which is a source of issues.
+
+Other
+~~~~~
+- Merge branch 'develop' into 2.4. [iglocska]
+- Merge branch 'correlation_rules' into develop. [iglocska]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [iglocska]
+- Merge branch 'pr-9744' into develop. [Sami Mokaddem]
+- Merge branch 'develop' into pr-9744. [Sami Mokaddem]
+- Merge branch 'feature/cleartext-logging' into develop. [Sami Mokaddem]
+- Merge branch 'develop' into feature/cleartext-logging. [Sami Mokaddem]
+- Merge remote-tracking branch 'refs/remotes/origin/develop' into
+  develop. [Sami Mokaddem]
+- Merge pull request #9826 from righel/fix-openapi-spec-params. [Luciano
+  Righetti]
+
+  Fix openapi spec params
+- Fix OpenAPI spec. [Stefano Ortolani]
+- Merge branch '2.4' into develop. [Alexandre Dulaunoy]
+- Update class properties. [Vincenzo Caputo]
+- Update module description. [Vincenzo Caputo]
+- Add attach decay score module. [Vincenzo Caputo]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [iglocska]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [Christian Studer]
+- Merge branch '2.4' into develop. [Alexandre Dulaunoy]
+- Merge pull request #9805 from ostefano/openapi. [Luciano Righetti]
+
+  Fix OpenAPI spec
+- Fix OpenAPI spec. [Stefano Ortolani]
+- Merge pull request #9792 from cudeso/2.4. [Alexandre Dulaunoy]
+
+  Adding Threatview.io MISP feeds
+- Adding Threatview.io MISP feeds. [Koen Van Impe]
+
+
+v2.4.194 (2024-06-21)
+---------------------
+
+New
+~~~
+- [bookmark] Added bookmark functionality. [Sami Mokaddem]
+
+  - Allow any user to create a bookmark
+  - Bookmarks can be shared to all users belonging to the bookmark organisation
+- [heartbeat] added. [iglocska]
+
+  - new endpoint, /users/heartbeat
+  - accessible unauthed, simply returns a 200 response if the instance is operational
+  - No checks are done on live status, version, etc. The idea is to simply see if the instance is up
+  - Skips most of beforefilter() altogether, making it very fast.
+- [skip otp requirement] role permission added to exclude certain roles
+  from the otp requirement. [iglocska]
+
+  - handy for filtered, local service accounts
+- [users api] added new boolean field to the output indicating whether
+  totp is set for the user. [iglocska]
+
+  - A simple boolean field to show whether totp has been set up for the given account
+  - works for /users/view, /admin/users/view, /admin/users/index
+
+Changes
+~~~~~~~
+- [misp-stix] Bumped latest version. [Christian Studer]
+- [schema] bump. [iglocska]
+- [version] bump. [iglocska]
+- [PyMISP] Bump version. [Raphaël Vinot]
+- [warning-lists] updated. [Alexandre Dulaunoy]
+- [misp-galaxy] updated. [Alexandre Dulaunoy]
+- [misp-objects] updated. [Alexandre Dulaunoy]
+- [bookmark:index] Added title acting as doc for exposed_to_org field.
+  [Sami Mokaddem]
+- [bookmarks:index] Improved support of quick search. [Sami Mokaddem]
+- [warning-lists] updated. [Alexandre Dulaunoy]
+- [ACL] added heartbeat to the ACL component. [iglocska]
+- [schema and mysql.sql] updated. [iglocska]
+
+  - it's been long overdue
+
+Fix
+~~~
+- [default roles] delegation permission added to sync user and
+  publisher. [iglocska]
+- [default role] readded. [iglocska]
+- [PyMISP] Mistake in tests. [Raphaël Vinot]
+- [roles] defaults fixed. [iglocska]
+- [event report markdown editor] not displaying tags, fixes #9774.
+  [iglocska]
+
+  - garbage response type bites us in the arse again
+- [feed ingestion] include a user agent to circumvent issues with feeds
+  requiring it, fixes #9773. [iglocska]
+- [galaxycluster blocklist] editing missing view, fixes #9766.
+  [iglocska]
+- [missing org logo] in decaying model readded, fixes #9768. [iglocska]
+
+  - went fubar after the move to base64 encoded org images
+- [decaying tool] JSON response fixes, fixes #9769. [iglocska]
+
+  - AJAX queries shouldn't receive the responses back as text/html when we're dealing with JSON responses
+- [object references links] fixed, fixes #9787. [iglocska]
+
+  - Clicking on a referenced object didn't refocus the view as it does for attributes
+  - moved to using data fields for referencing the correct object
+
+  - The code handling this was an eldritch nightmare that only worked when enough sheep have been sacirificed to the wicked javascript deity on the last full moon
+- [server edit] view - notice error fixed. [iglocska]
+
+  - url_params in the pull rules may not exist on old server objects
+- [bookmark:index] Fixed typo in description. [Sami Mokaddem]
+- [mysql.sql] default role settings fixed. [iglocska]
+
+  memory_limit / max_execution_time should be NULL not 0
+- [openapi] local flag in EventTags should be boolean. [iglocska]
+- [doc] correct filenames in rhel background worker migration guide
+  steps. [Jeroen Pinoy]
+- [sighting sync] raised tiny chunk size to improve performance.
+  [iglocska]
+
+Other
+~~~~~
+- Merge branch 'develop' into 2.4. [iglocska]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [Christian Studer]
+- Merge branch 'bookmarks' into develop. [iglocska]
+- Merge branch 'develop' into bookmarks. [iglocska]
+- Merge branch '2.4' into develop. [iglocska]
+- Update README.md. [Andras Iklody]
+- Merge pull request #9782 from mdhirt/mdhirt-fix-#9781. [Andras Iklody]
+
+  Update eventattributetoolbar.ctp
+- Update eventattributetoolbar.ctp. [Mike]
+
+  Fixed invalid object _( on lines 266 and 274
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [iglocska]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [iglocska]
+- Merge pull request #9771 from Wachizungu/fix-rhel-background-workers-
+  migration-guide. [Alexandre Dulaunoy]
+
+  fix: [doc] correct filenames in rhel background worker migration guid…
+
+
+v2.4.193 (2024-06-11)
 ---------------------
 
 New
@@ -38,6 +683,11 @@ New
 
 Changes
 ~~~~~~~
+- [recorrelation] added new functionality to set the recorrelation chunk
+  size. [iglocska]
+
+  - recorrelate in configurable chunk sizes (rather than the old hard coded value of 500)
+  - immediately execute the saving of correlations after each chunk (should drastically reduce memory usage for massive events)
 - [version] bump. [iglocska]
 - [PyMISP] Bump version. [Raphaël Vinot]
 - [misp-stix] Bumped latest version. [Christian Studer]
@@ -135,6 +785,7 @@ Fix
 
 Other
 ~~~~~
+- Merge branch 'develop' into 2.4. [iglocska]
 - Merge branch 'develop' into 2.4. [iglocska]
 - Merge branch 'develop' of github.com:MISP/MISP into develop.
   [Christian Studer]

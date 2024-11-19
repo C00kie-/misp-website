@@ -1,6 +1,83 @@
 # Changelog
 
 
+## %%version%% (unreleased)
+
+### New
+
+* [detection-engineering] new taxonomy to describe detection-engineering pattern. [Alexandre Dulaunoy]
+
+### Changes
+
+* [vulnerability] sighting predicate added as described on https://vulnerability.circl.lu/ [Alexandre Dulaunoy]
+
+* [exercise] add generic red-teaming exercise. [Alexandre Dulaunoy]
+
+* [MANIFEST] updated. [Alexandre Dulaunoy]
+
+* [infoleak] version updated. [Alexandre Dulaunoy]
+
+* [infoleak] add barcode. [terrtia]
+
+* [MANIFEST] updated. [Alexandre Dulaunoy]
+
+* [doc] README updated. [Alexandre Dulaunoy]
+
+* [doc] manifest updated. [Alexandre Dulaunoy]
+
+* [infoleak] add qrcode tag. [terrtia]
+
+### Fix
+
+* [vulnerability] sighting added. [Alexandre Dulaunoy]
+
+### Other
+
+* Merge pull request #286 from Terrtia/main. [Alexandre Dulaunoy]
+
+  chg: [infoleak] add barcode
+
+* Merge pull request #284 from th3r3d/main. [Alexandre Dulaunoy]
+
+  Created Engage - Updated GrayZone
+
+* Updated GrayZone to right version. [Jan Pohl]
+
+* Merge branch 'MISP:main' into main. [th3r3d]
+
+* Delete Engage directory. [th3r3d]
+
+* Update machinetag.json. [th3r3d]
+
+  Fixed typo and Org Name
+
+* Fixed errors in taxonomy. [th3r3d]
+
+  Errors in taxonomy.
+
+* Update GrayZone to version 3.1. [th3r3d]
+
+  Update GrayZone to version 3.1
+
+* Created taxo for MITRE Engage. [th3r3d]
+
+  Created taxo for MITRE Engage
+
+* Add: [acs-marking] New taxonomy based on the ACS marking definition. [Christian Studer]
+
+  - Includes some enumerations and vocabularies to
+    extend the use of a Custom Galaxy Cluster
+    describing the complete ACS marking definition
+
+* Merge branch 'main' of github.com:misp/misp-taxonomies. [Christian Studer]
+
+* Merge pull request #285 from Terrtia/main. [Alexandre Dulaunoy]
+
+  chg: [infoleak] add qrcode tag
+
+* Merge branch 'main' of github.com:misp/misp-taxonomies. [Christian Studer]
+
+
 ## v2.4.197 (2024-09-02)
 
 ### New

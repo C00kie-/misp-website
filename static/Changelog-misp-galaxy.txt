@@ -1,6 +1,295 @@
 # Changelog
 
 
+## %%version%% (unreleased)
+
+### Changes
+
+* [README] updated. [Alexandre Dulaunoy]
+
+* [README] updated. [Alexandre Dulaunoy]
+
+* [ransomware] group updated. [Alexandre Dulaunoy]
+
+* [sigma] updated. [Alexandre Dulaunoy]
+
+* [readme] updated. [Alexandre Dulaunoy]
+
+* [tidal] updated. [Alexandre Dulaunoy]
+
+* [README] updated. [Alexandre Dulaunoy]
+
+* [cluster] updated. [Alexandre Dulaunoy]
+
+* [ransomware] updated to the latest version. [Alexandre Dulaunoy]
+
+* [doc] README updated. [Alexandre Dulaunoy]
+
+* [ransomware] updated. [Alexandre Dulaunoy]
+
+* [doc] README updated. [Alexandre Dulaunoy]
+
+* [producer] updated. [Alexandre Dulaunoy]
+
+* [producer] added Recorded Future, Cyble, Cyfirma, SentinelOne, Fortinet, Zscaler, Splunk and Huntress. [rectifyq]
+
+* [threat-actor] version updated. [Alexandre Dulaunoy]
+
+* [tidal] updated to the latest version. [Alexandre Dulaunoy]
+
+* [sigma] updated to the latest version. [Alexandre Dulaunoy]
+
+* [ransomware] updated. [Alexandre Dulaunoy]
+
+* [threat-actor] added a relationship between `Earth Estries` and `GhostEmperor` [Rony]
+
+* [threat-actor] `GhostEmperor` updated. [Rony]
+
+* [ransomware] updated. [Alexandre Dulaunoy]
+
+* [threat-actor] SloppyLemming added. [Alexandre Dulaunoy]
+
+* [producer] updated with cloudflare and one description fixed. [Alexandre Dulaunoy]
+
+* [doc] README updated. [Rony]
+
+* [threat-actor] fix typo. [Rony]
+
+* [threat-actor] add earth baxia. [Rony]
+
+* [doc] README updated. [Alexandre Dulaunoy]
+
+* [ransomware] updated to the latest version. [Alexandre Dulaunoy]
+
+* [doc] updated. [Alexandre Dulaunoy]
+
+* [doc] updated. [Alexandre Dulaunoy]
+
+* [producer] added some security companies. [Tom]
+
+### Fix
+
+* [producer] must be an array. [Alexandre Dulaunoy]
+
+* [producer] refs are arrays. [Alexandre Dulaunoy]
+
+### Other
+
+* Merge pull request #1033 from Mathieu4141/threat-actors/fa9e8f7c-83a4-4b9d-bfba-b8d52f1db99f. [Alexandre Dulaunoy]
+
+  [threat actors] Add 10 actors
+
+* [threat actors] Update README. [Mathieu4141]
+
+* [threat-actors] Add APT73. [Mathieu4141]
+
+* [threat-actors] Add WageMole. [Mathieu4141]
+
+* [threat-actors] Add Tstark. [Mathieu4141]
+
+* [threat-actors] Add FrostyNeighbor. [Mathieu4141]
+
+* [threat-actors] Add Nam3L3ss. [Mathieu4141]
+
+* [threat-actors] Add SpaceBears. [Mathieu4141]
+
+* [threat-actors] Add SYLHET GANG-SG. [Mathieu4141]
+
+* [threat-actors] Add TOXCAR CYBER TEAM. [Mathieu4141]
+
+* [threat-actors] Add Evilbyte. [Mathieu4141]
+
+* [threat-actors] Add EvilWeb. [Mathieu4141]
+
+* Merge pull request #1032 from sbjzn/main. [Alexandre Dulaunoy]
+
+* Fix 'Alternative Label' on C - Manufacturing. [Simon]
+
+* Merge branch 'Delta-Sierra-main' [Alexandre Dulaunoy]
+
+* Merge branch 'main' of https://github.com/Delta-Sierra/misp-galaxy into Delta-Sierra-main. [Alexandre Dulaunoy]
+
+* M. [Delta-Sierra]
+
+* Merge. [Delta-Sierra]
+
+* Add Operation Cobalt Whisper. [Delta-Sierra]
+
+* Merge pull request #1030 from Mathieu4141/threat-actors/13658ee8-66d7-4bd7-91a0-d10d71411900. [Alexandre Dulaunoy]
+
+  [threat actors] Add 12 new actors and 4 aliases
+
+* [threat actors] Update README. [Mathieu4141]
+
+* [threat-actors] Add Blackmeta. [Mathieu4141]
+
+* [threat-actors] Add DarkRaaS. [Mathieu4141]
+
+* [threat-actors] Add APT10 aliases. [Mathieu4141]
+
+* [threat-actors] Add AridViper aliases. [Mathieu4141]
+
+* [threat-actors] Add RomCom aliases. [Mathieu4141]
+
+* [threat-actors] Add OilRig aliases. [Mathieu4141]
+
+* [threat-actors] Add IcePeony. [Mathieu4141]
+
+* [threat-actors] Add UAC-0215. [Mathieu4141]
+
+* [threat-actors] Add Water Makara. [Mathieu4141]
+
+* [threat-actors] Add UNC5820. [Mathieu4141]
+
+* [threat-actors] Add OverFlame. [Mathieu4141]
+
+* [threat-actors] Add LulzSec Black. [Mathieu4141]
+
+* [threat-actors] Add RipperSec. [Mathieu4141]
+
+* [threat-actors] Add Shahid Hemmat. [Mathieu4141]
+
+* [threat-actors] Add Asnarök. [Mathieu4141]
+
+* [threat-actors] Add Anonymous64. [Mathieu4141]
+
+* Merge pull request #1029 from danielplohmann/patch-42. [Alexandre Dulaunoy]
+
+  add APT37 alias used by AhnLab (TA-RedAnt)
+
+* Add APT37 alias used by AhnLab (TA-RedAnt) [Daniel Plohmann]
+
+* Merge pull request #1027 from danielplohmann/patch-40. [Alexandre Dulaunoy]
+
+  added Unit42 name for Kimsuky (Sparkling Pisces)
+
+* Added Unit42 name for Kimsuky (Sparkling Pisces) [Daniel Plohmann]
+
+* Merge branch 'rectifyq-main' [Alexandre Dulaunoy]
+
+* Merge pull request #1025 from Mathieu4141/threat-actors/29621e26-b458-432e-bbb5-aaa8fba3a449. [Alexandre Dulaunoy]
+
+  [threat actors] Add 5 actors
+
+* [threat actors] Update README. [Mathieu4141]
+
+* [threat-actors] Add TaskMasters. [Mathieu4141]
+
+* [threat-actors] Add SongXY. [Mathieu4141]
+
+* [threat-actors] Add CeranaKeeper. [Mathieu4141]
+
+* [threat-actors] Add Awaken Likho. [Mathieu4141]
+
+* [threat-actors] Add SkidSec. [Mathieu4141]
+
+* Merge pull request #1024 from Mathieu4141/threat-actors/d848c04e-d8f4-4b71-bf82-f8d841bda778. [Alexandre Dulaunoy]
+
+  [threat actors] Add 8 actors and 1 alias
+
+* [threat actors] Update README. [Mathieu4141]
+
+* [threat-actors] Add UNC1860. [Mathieu4141]
+
+* [threat-actors] Add Storm-1567 aliases. [Mathieu4141]
+
+* [threat-actors] Add CosmicBeetle. [Mathieu4141]
+
+* [threat-actors] Add Storm-0501. [Mathieu4141]
+
+* [threat-actors] Add Handala. [Mathieu4141]
+
+* [threat-actors] Add AzzaSec. [Mathieu4141]
+
+* [threat-actors] Add VICE SPIDER. [Mathieu4141]
+
+* [threat-actors] Add DragonRank. [Mathieu4141]
+
+* [threat-actors] Add Storm-0494. [Mathieu4141]
+
+* Merge pull request #1022 from Delta-Sierra/main. [Alexandre Dulaunoy]
+
+  SloppyLemming relationsships
+
+* Update README.md. [Delta-Sierra]
+
+* Merge https://github.com/MISP/misp-galaxy. [Delta-Sierra]
+
+* Merge pull request #1021 from r0ny123/🧂🌀 [Alexandre Dulaunoy]
+
+  Updates regarding Salt Typhoon
+
+* SloppyLemming relationsships. [Delta-Sierra]
+
+* Merge pull request #1020 from r0ny123/Earth-Baxia. [Alexandre Dulaunoy]
+
+  Add Earth Baxia
+
+* Merge branch 'main' of github.com:MISP/misp-galaxy. [Alexandre Dulaunoy]
+
+* Merge pull request #1018 from Mathieu4141/threat-actors/e2b7cc51-95a5-4a68-b405-a747d3240b17. [Alexandre Dulaunoy]
+
+  [threat actors] Adding 16 actors
+
+* [threat actors] Update README. [Mathieu4141]
+
+* [threat-actors] Add HikkI-Chan. [Mathieu4141]
+
+* [threat-actors] Add UTG-Q-010. [Mathieu4141]
+
+* [threat-actors] Add Fail0verflow. [Mathieu4141]
+
+* [threat-actors] Add Storm-1679. [Mathieu4141]
+
+* [threat-actors] Add UAT-5394. [Mathieu4141]
+
+* [threat-actors] Add RaHDit. [Mathieu4141]
+
+* [threat-actors] Add IRLeaks. [Mathieu4141]
+
+* [threat-actors] Add UAC-0154. [Mathieu4141]
+
+* [threat-actors] Add UNC4536. [Mathieu4141]
+
+* [threat-actors] Add SILKFIN AGENCY. [Mathieu4141]
+
+* [threat-actors] Add UNC2970. [Mathieu4141]
+
+* [threat-actors] Add ZeroSevenGroup. [Mathieu4141]
+
+* [threat-actors] Add Actor240524. [Mathieu4141]
+
+* [threat-actors] Add TIDRONE. [Mathieu4141]
+
+* [threat-actors] Add UNC4540. [Mathieu4141]
+
+* [threat-actors] Add CL-STA-0043 aliases. [Mathieu4141]
+
+* Merge branch 'nyx0-main' [Alexandre Dulaunoy]
+
+* Merge pull request #1017 from MISP/dependabot/pip/tools/mkdocs/cryptography-43.0.1. [Alexandre Dulaunoy]
+
+  build(deps): bump cryptography from 42.0.4 to 43.0.1 in /tools/mkdocs
+
+* Build(deps): bump cryptography from 42.0.4 to 43.0.1 in /tools/mkdocs. [dependabot[bot]]
+
+  Bumps [cryptography](https://github.com/pyca/cryptography) from 42.0.4 to 43.0.1.
+  - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+  - [Commits](https://github.com/pyca/cryptography/compare/42.0.4...43.0.1)
+
+  ---
+  updated-dependencies:
+  - dependency-name: cryptography
+    dependency-type: direct:production
+  ...
+
+* Merge pull request #1016 from gallypette/main. [Alexandre Dulaunoy]
+
+  chg: [first-csirt] keep the best script
+
+* Add: [first-csirt] keep the best script. [Jean-Louis Huynen]
+
+
 ## v2.4.197 (2024-09-02)
 
 ### Changes

@@ -1,6 +1,106 @@
 # Changelog
 
 
+## %%version%% (unreleased)
+
+### New
+
+* [expansion:convert_markdown_to_pdf] Added module to render a markdown (under GFM) into PDF. [Sami Mokaddem]
+
+* [expansion] Added skeleton module for the misp_standard format. [Sami Mokaddem]
+
+### Changes
+
+* [workflow] Python 3.8 is now officially EoL. [Alexandre Dulaunoy]
+
+* [poetry.lock] Bumped. [Sami Mokaddem]
+
+### Fix
+
+* [mmdb_lookup] moduleinfo new format updated. [Alexandre Dulaunoy]
+
+* [launch] check conf file. [David Cruciani]
+
+* [pyproject] Added missing pandoc requirement. [Sami Mokaddem]
+
+* [expansion:init] Added new module `convert_markdown_to_pdf` for loading. [Sami Mokaddem]
+
+### Other
+
+* Merge branch 'cudeso-main' [Alexandre Dulaunoy]
+
+* Merge branch 'main' of https://github.com/cudeso/misp-modules into cudeso-main. [Alexandre Dulaunoy]
+
+* Be more consistent with max_country_qt / max_country_info_qt. [Koen Van Impe]
+
+* Extend MMDB with max_country_qt. [Koen Van Impe]
+
+  When querying MMDB there are sometimes multiple country_info objects returned, mostly due to the different db_source. Sometimes customers are not interested in the db_source, and only the geo-info.
+  This change adds max_country_qt. When
+  - Set to None or 0, has no effect
+  - Set to a value higher than 0, the number of country_info entries is limited to max_country_qt
+
+* Merge pull request #700 from MISP/dependabot/pip/website/werkzeug-3.0.6. [Alexandre Dulaunoy]
+
+  build(deps): bump werkzeug from 3.0.3 to 3.0.6 in /website
+
+* Build(deps): bump werkzeug from 3.0.3 to 3.0.6 in /website. [dependabot[bot]]
+
+  Bumps [werkzeug](https://github.com/pallets/werkzeug) from 3.0.3 to 3.0.6.
+  - [Release notes](https://github.com/pallets/werkzeug/releases)
+  - [Changelog](https://github.com/pallets/werkzeug/blob/main/CHANGES.rst)
+  - [Commits](https://github.com/pallets/werkzeug/compare/3.0.3...3.0.6)
+
+  ---
+  updated-dependencies:
+  - dependency-name: werkzeug
+    dependency-type: direct:production
+  ...
+
+* Merge remote-tracking branch 'origin/main' [Sami Mokaddem]
+
+
+## v2.4.198 (2024-10-08)
+
+### Changes
+
+* [circl_passivedns] Using `time_first` & `time_last` as `first_seen` and `last_seen` fields on the `passive-dns` objects. [Christian Studer]
+
+  - Should fix #692
+
+* [website] launch and migrate python script. [David Cruciani]
+
+### Fix
+
+* [website.migrations] try-except. [David Cruciani]
+
+* [expansion:virus_total] Capture `ForbiddenError` from vr.APIError correctly. [Sami Mokaddem]
+
+### Other
+
+* Merge pull request #696 from MISP/fix-poetry. [Stefano Ortolani]
+
+  add fix as reported here https://github.com/MISP/misp-docker/issues/167
+
+* Add fix as reported here https://github.com/MISP/misp-docker/issues/167. [Stefano Ortolani]
+
+* Merge pull request #693 from cudeso/main. [Alexandre Dulaunoy]
+
+  Update dns.py
+
+* Update dns.py. [Koen Van Impe]
+
+  Get rid of 'jj' in DNS module description field
+
+* Merge branch 'main' of github.com:MISP/misp-modules. [Christian Studer]
+
+* Merge remote-tracking branch 'origin/main' [Sami Mokaddem]
+
+* Merge branch 'main' of github.com:MISP/misp-modules. [Christian Studer]
+
+* Merge branch 'main' of github.com:MISP/misp-modules. [Christian Studer]
+
+
 ## v2.4.197 (2024-09-02)
 
 ### Changes

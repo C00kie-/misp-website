@@ -1,6 +1,113 @@
 # Changelog
 
 
+## %%version%% (unreleased)
+
+### New
+
+* [object] dom-hash object added. [Alexandre Dulaunoy]
+
+* [misp-object] New ctf-challenge object. [rectifyq]
+
+* [attacker-infra] added for the MISP-LEA project. [Alexandre Dulaunoy]
+
+* [user-action] new user-action object added. [Alexandre Dulaunoy]
+
+### Changes
+
+* [file/url] `dom-hash` added to file and url object templates. [Alexandre Dulaunoy]
+
+* [dom-hash] added a `ref` field to reference to one or more analysis. [Alexandre Dulaunoy]
+
+* [relationships] updated. [Alexandre Dulaunoy]
+
+* [relationship] add a releasable-to relationship. [Alexandre Dulaunoy]
+
+* [schema] `onion-address` type added. [Alexandre Dulaunoy]
+
+* [victim] jq and version updated. [Alexandre Dulaunoy]
+
+* [fix] schema fixed. [Alexandre Dulaunoy]
+
+* [schema] updated with the new dom-hash attribute type. [Alexandre Dulaunoy]
+
+* [tor-hiddenservice] Updated template to match the onion lookup API format. [Christian Studer]
+
+  - Using new attribute type `onion-address` to
+    describe the onion address
+  - Added `language` and `title` to the template
+
+* [diameter-attack] jq all the things. [Alexandre Dulaunoy]
+
+* [doc] updated. [Alexandre Dulaunoy]
+
+* [shadowserver-scan-http-proxy] new template for MISP-LEA project. [Alexandre Dulaunoy]
+
+* [user-action] fixed. [Alexandre Dulaunoy]
+
+### Fix
+
+* [opentide] JQed the JSON file. [Alexandre Dulaunoy]
+
+* [schema] JQed. [Alexandre Dulaunoy]
+
+* [dom-hash] category fixed. [Alexandre Dulaunoy]
+
+* [ctf-challenge] JSON jqed. [Alexandre Dulaunoy]
+
+### Other
+
+* Merge pull request #445 from mdavis332/patch-1. [Alexandre Dulaunoy]
+
+  include `ip-src` in Person
+
+* Add files via upload. [Michael Davis]
+
+* Bump version. [Michael Davis]
+
+* Jq fix. [Michael Davis]
+
+* Include `ip-src` in Person. [Michael Davis]
+
+  update Person object template to include any src IP addresses
+
+* Merge branch 'prose-leviathan-introduce-new-opentide-object' [Alexandre Dulaunoy]
+
+* Merge branch 'introduce-new-opentide-object' of https://github.com/prose-leviathan/misp-objects into prose-leviathan-introduce-new-opentide-object. [Alexandre Dulaunoy]
+
+* Update definition.json. [Leviathan]
+
+* Update definition.json. [Leviathan]
+
+* Update definition.json. [Leviathan]
+
+* Update definition.json. [Leviathan]
+
+* Create definition.json. [Leviathan]
+
+* Merge branch 'main' of github.com:MISP/misp-objects. [Christian Studer]
+
+* Merge branch 'mFaou-main' [Alexandre Dulaunoy]
+
+* Merge branch 'main' of https://github.com/mFaou/misp-objects into mFaou-main. [Alexandre Dulaunoy]
+
+* Added 6 sectors to the victim object. [Matthieu Faou]
+
+* Merge branch 'main' of github.com:MISP/misp-objects. [Christian Studer]
+
+* Merge branch 'yodresh-master' [Alexandre Dulaunoy]
+
+* Merge pull request #1 from yodresh/misp-object-diameter-add-fields. [Alexandre De Oliveira]
+
+  Update definition.json - Diameter Object
+
+* Update definition.json - Diameter Object. [Alexandre De Oliveira]
+
+  Updating Diameter object with new fields to match SS7 object
+
+* Merge branch 'rectifyq-ctf-challenge' [Alexandre Dulaunoy]
+
+
 ## v2.4.197 (2024-09-02)
 
 ### Changes
