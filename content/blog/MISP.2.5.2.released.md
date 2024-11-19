@@ -1,5 +1,5 @@
 ---
-title: MISP 2.4.199 and 2.5.2 released - Post Hack.lu/CTI-Summit release with many new features
+title: MISP 2.4.200 and 2.5.2 released - Post Hack.lu/CTI-Summit release with many new features
 banner: /img/blog/2.5.2/adhoc-trigger.png
 author:
  - MISP Project team
