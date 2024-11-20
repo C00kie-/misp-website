@@ -20,7 +20,7 @@ Ad-Hoc Workflows can be executed manually or scheduled, offering flexible option
 
 ![Worflow action module](/img/blog/2.5.2/run_wf_action_module.png)
 
-With these standalone worklows at hand, the first things that came right into our mind was to allow users to apply a workflow directly to an event, similar to how you’d run an enrichment.
+With these standalone workflows at hand, the first things that came right into our mind was to allow users to apply a workflow directly to an event, similar to how you’d run an enrichment.
 
 ![Run Workflow on an Event](/img/blog/2.5.2/run-wf-on-event.png)
 
@@ -33,7 +33,7 @@ In the event view, you can now access all available galaxy matrices and select t
 ![Galaxy Matrix](/img/blog/2.5.2/galaxy-matrix.png)
 
 ### MITRE ATT&CK
-Finally, the matrix for MITRE ATT&CK also includes an unfiltered tab `attack-enterprise` that shows all techniques on the same tab. This tab is the one that's opened by default whevener the matrix is diplayed.
+Finally, the matrix for MITRE ATT&CK also includes an unfiltered tab `attack-enterprise` that shows all techniques on the same tab. This tab is the one that's opened by default whenever the matrix is displayed.
 
 
 ### Private Custom Galaxies
@@ -52,7 +52,7 @@ With the ability to hide clusters (and galaxies), a misconfiguration could unint
 
 
 ## Event Reports
-There has been many changes for Event Reports. Let's have a quick look at what's new!
+There have been many changes for Event Reports. Let's have a quick look at what's new!
 
 ### Tags on Event Reports
 To improve classification and sorting, users can now attach (global and local) tags on Event Reports.
@@ -73,12 +73,16 @@ You can now paste pictures directly into the Event Report editor. This long-awai
 
 {{<video src="/img/blog/2.5.2/event-report-img-pasting.mp4" title="Event report image pasting demo" >}}
 
+Make sure to enable the rendering using 'Menu, Markdown parsing rules' when trying to view the images.
+
 ### Manage Imported pictures
 ![Manage Imported Pictures](/img/blog/2.5.2/manage-imported-pictures.png)
 Site admins have the ability to manage images pasted but not saved as attributes. They can assign aliases to these images, allowing for quick and easy inclusion in reports using the following syntax:
 ```md
-![picture_alias](picture_alias)
+![alt_text](/eventReports/viewPicture/picture_alias)
 ```
+
+Please note that adding an alias will make the image available to anyone on the instance, using this alias.
 
 ## Extending Event
 We've enhanced the extended event functionality to make it more intuitive and slightly more versatile. Previously, you could switch to "extended view" to see the combined content of the parent event and all its child events. Now, we've added the reverse option: a merged view where the parent's data is merged into the child event.
@@ -93,7 +97,7 @@ With the release of MISP 2.5.x, we've culled the number of target operating syst
 
 The requirements so far are an up to date RHEL installation, with RHEL 9.4 as the minimum. The current installation still comes with some caveats, it's so far in experimental state until we get more feedback from the community, as well as one feature confirmed not working 100% correctly yet: Worker management using Supervisor works, but when SELinux is set to be enforced, MISP cannot determine the process owner of the worker process. This state is displayed via a new diagnostic state as seen below.
 
-![RHEL worker display](/img/blog/2.5.2/rhel_worker.png)
+![RHEL worker display](/img/rhel_worker.png)
 
 An update script to bring MISP 2.4.x to 2.5.x on RHEL is still in the works and planned for a future update.
 
