@@ -83,6 +83,7 @@ Site admins have the ability to manage images pasted but not saved as attributes
 ```
 
 Please note that adding an alias will make the image available to anyone on the instance, using this alias.
+Hint text to add these images will currently appear when typing `![` in the event report.
 
 ## Extending Event
 We've enhanced the extended event functionality to make it more intuitive and slightly more versatile. Previously, you could switch to "extended view" to see the combined content of the parent event and all its child events. Now, we've added the reverse option: a merged view where the parent's data is merged into the child event.
