@@ -593,6 +593,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_trust">trust</a></li>
 <li><a href="#_type_7">type</a></li>
 <li><a href="#_unified_kill_chain">unified-kill-chain</a></li>
+<li><a href="#_unified_ransomware_kill_chain">unified-ransomware-kill-chain</a></li>
 <li><a href="#_use_case_applicability">use-case-applicability</a></li>
 <li><a href="#_veris">veris</a></li>
 <li><a href="#_vmray">vmray</a></li>
@@ -69688,6 +69689,18 @@ Again, there are some possibilities, but this may be a rivalry company in a simi
 </div>
 </div>
 <div class="sect3">
+<h4 id="_ransomwaretargetnas">ransomware:target="nas"</h4>
+<div class="paragraph">
+<p>Ransomware that targets network attached storage.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ransomwaretargetvm">ransomware:target="vm"</h4>
+<div class="paragraph">
+<p>Ransomware that targets virtualized environment such as Vmware or Hyper-V.</p>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_ransomwaretargetmobile_device">ransomware:target="mobile-device"</h4>
 <div class="paragraph">
 <p>Ransomware that targets mobile devices.</p>
@@ -74770,6 +74783,107 @@ unified-kill-chain namespace available in JSON format at <a href="https://github
 <h4 id="_unified_kill_chainaction_on_objectivesobjectives">unified-kill-chain:Action on Objectives="objectives"</h4>
 <div class="paragraph">
 <p>Objectives</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_unified_ransomware_kill_chain">unified-ransomware-kill-chain</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+unified-ransomware-kill-chain namespace available in JSON format at <a href="https://github.com/MISP/misp-taxonomies/blob/main/unified-ransomware-kill-chain/machinetag.json"><strong>this location</strong></a>. The JSON format can be freely reused in your application or automatically enabled in <a href="https://www.github.com/MISP/MISP">MISP</a> taxonomy.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Unified Ransomware Kill Chain, a intelligence driven model developed by Oleg Skulkin, aims to track every single phase of a ransomware attack.</p>
+</div>
+<div class="sect2">
+<h3 id="_gain_access">Gain Access</h3>
+<div class="sect3">
+<h4 id="_unified_ransomware_kill_chaingain_access">unified-ransomware-kill-chain:Gain Access</h4>
+<div class="paragraph">
+<p>Ransomware affiliates may gain the access to the target network or purchase such access from the initial access brokers.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_establish_foothold">Establish Foothold</h3>
+<div class="sect3">
+<h4 id="_unified_ransomware_kill_chainestablish_foothold">unified-ransomware-kill-chain:Establish Foothold</h4>
+<div class="paragraph">
+<p>Ransomware affiliates may need to collect information about the compromised perimeter, elevate its privileges and access credentials, as well as disabling or bypassing defenses to initiate the discovery and propagation.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_network_discovery">Network Discovery</h3>
+<div class="sect3">
+<h4 id="_unified_ransomware_kill_chainnetwork_discovery">unified-ransomware-kill-chain:Network Discovery</h4>
+<div class="paragraph">
+<p>Ransomware affiliates, before starting network propagation, need to collect information about remote systems.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_key_assets_discovery">Key Assets Discovery</h3>
+<div class="sect3">
+<h4 id="_unified_ransomware_kill_chainkey_assets_discovery">unified-ransomware-kill-chain:Key Assets Discovery</h4>
+<div class="paragraph">
+<p>Ransomware affiliates start to acquire additional data, such as privileged credentials, sensitive information and backup related to critical assets.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_network_propagation_2">Network Propagation</h3>
+<div class="sect3">
+<h4 id="_unified_ransomware_kill_chainnetwork_propagation">unified-ransomware-kill-chain:Network Propagation</h4>
+<div class="paragraph">
+<p>Ransomware affiliates use legitimate tools and techniques to move laterally through the network.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_data_exfiltration_2">Data Exfiltration</h3>
+<div class="sect3">
+<h4 id="_unified_ransomware_kill_chaindata_exfiltration">unified-ransomware-kill-chain:Data Exfiltration</h4>
+<div class="paragraph">
+<p>Ransomware affiliates may collect data from one or multiple sources, such as network attached storages, cloud storages and so on, and proceed with the exfiltration.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deployment_preparation">Deployment Preparation</h3>
+<div class="sect3">
+<h4 id="_unified_ransomware_kill_chaindeployment_preparation">unified-ransomware-kill-chain:Deployment Preparation</h4>
+<div class="paragraph">
+<p>Ransomware affiliates disable and remove security solutions or available backups prior to ransomware deployment.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ransomware_deployment">Ransomware Deployment</h3>
+<div class="sect3">
+<h4 id="_unified_ransomware_kill_chainransomware_deployment">unified-ransomware-kill-chain:Ransomware Deployment</h4>
+<div class="paragraph">
+<p>Ransomware affiliates attempt to achieve their main goal: deploy the ransomware.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_extortion">Extortion</h3>
+<div class="sect3">
+<h4 id="_unified_ransomware_kill_chainextortion">unified-ransomware-kill-chain:Extortion</h4>
+<div class="paragraph">
+<p>Ransomware affiliates, after encrypting the victim&#8217;s assets, may start to upload sample of exfiltrated data on the DLS, call the victims' employees, and even perform DDOS attacks against the compromised infrastructure only to facilitate extortion.</p>
 </div>
 </div>
 </div>
@@ -88297,7 +88411,7 @@ Exclusive flag set which means the values or predicate below must be set exclusi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-12-03 14:55:53 +0100
+Last updated 2024-12-05 16:08:49 +0100
 </div>
 </div>
 </body>
