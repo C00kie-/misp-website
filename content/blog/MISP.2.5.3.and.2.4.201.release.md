@@ -17,7 +17,7 @@ We are excited to announce the latest updates to MISP with versions **v2.5.3** a
 - **Instance-Wide Report Variables**: Introduced instance-wide template variables for reports.  
   - Only site administrators can create, edit, or delete these variables.  
   - All users can now utilize and view these variables.  
-- **Protected event improvements**
+### **Protected event improvements**
   - Exchanging of protected events via feeds is now supported
   - Uploading protected events via the import MISP JSON functionality is now supported
   - Added new endpoint to let the instance sign arbitrary data on demand (with a new role permission and ACL setting to go along with this powerful functionality)
