@@ -3,6 +3,13 @@
 
 ## %%version%% (unreleased)
 
+### Fix
+
+* [yara_query] description fixed. [Alexandre Dulaunoy]
+
+
+## v2.4.199 (2024-11-24)
+
 ### New
 
 * [expansion:convert_markdown_to_pdf] Added module to render a markdown (under GFM) into PDF. [Sami Mokaddem]
@@ -10,6 +17,13 @@
 * [expansion] Added skeleton module for the misp_standard format. [Sami Mokaddem]
 
 ### Changes
+
+* [expansion:convert_markdown_to_pdf] Better support of margins and added installation notes. [Sami Mokaddem]
+
+  - Add to introduce hacky code  as wkhtmltopdf could not correctly parse margins
+  and other options such as --disable-smart-shrinking when passed by pandoc
+
+* [expansion:convert_markdown_to_pdf] Added support of `margin` configuration. [Sami Mokaddem]
 
 * [workflow] Python 3.8 is now officially EoL. [Alexandre Dulaunoy]
 
@@ -26,6 +40,43 @@
 * [expansion:init] Added new module `convert_markdown_to_pdf` for loading. [Sami Mokaddem]
 
 ### Other
+
+* Release 2.4.199 and remove py38 leftovers. [Stefano Ortolani]
+
+* Merge pull request #702 from MISP/dependabot/pip/aiohttp-3.10.11. [Alexandre Dulaunoy]
+
+  build(deps): bump aiohttp from 3.10.10 to 3.10.11
+
+* Build(deps): bump aiohttp from 3.10.10 to 3.10.11. [dependabot[bot]]
+
+  Bumps [aiohttp](https://github.com/aio-libs/aiohttp) from 3.10.10 to 3.10.11.
+  - [Release notes](https://github.com/aio-libs/aiohttp/releases)
+  - [Changelog](https://github.com/aio-libs/aiohttp/blob/master/CHANGES.rst)
+  - [Commits](https://github.com/aio-libs/aiohttp/compare/v3.10.10...v3.10.11)
+
+  ---
+  updated-dependencies:
+  - dependency-name: aiohttp
+    dependency-type: indirect
+  ...
+
+* Merge remote-tracking branch 'origin/main' [Sami Mokaddem]
+
+* Merge pull request #701 from cudeso/main. [Alexandre Dulaunoy]
+
+  Update urlscan.py
+
+* Update urlscan.py. [Koen Van Impe]
+
+  Avoid stopping with "net::ERR_ABORTED", "net::ERR_FAILED", "net::ERR_QUIC_PROTOCOL_ERROR"
+  Add PTR, TLSIssuer, Server, Page Title
+  Update comment field to include more detailed description of enrichment.
+
+* Update urlscan.py. [Koen Van Impe]
+
+  Avoid exiting after 'net::ERR_ABORTED' and 'net::ERR_FAILED'; still return the results.
+
+* Merge remote-tracking branch 'origin/main' [Sami Mokaddem]
 
 * Merge branch 'cudeso-main' [Alexandre Dulaunoy]
 

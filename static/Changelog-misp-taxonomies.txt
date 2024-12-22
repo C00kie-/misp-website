@@ -5,9 +5,40 @@
 
 ### New
 
+* [organization-cyber-harm] new taxonomy organizational-cyber-harm. [Alexandre Dulaunoy]
+
+  Based on the publication "A taxonomy of cyber-harms: Defining the
+  impacts of cyber-attacks and understanding how they propagate"
+
+* [PFC] Le Protocole des feux de circulation (PFC) est basé sur le standard « Traffic Light Protocol (TLP) » conçu par le FIRST. Il a pour objectif d’informer sur les limites autorisées pour la diffusion des informations. [Alexandre Dulaunoy]
+
 * [detection-engineering] new taxonomy to describe detection-engineering pattern. [Alexandre Dulaunoy]
 
 ### Changes
+
+* [doc] update the explanation of the taxonomy format. [Alexandre Dulaunoy]
+
+  It also fixes #210 ;-)
+
+* [doc] updated. [Alexandre Dulaunoy]
+
+* [doc] updated. [Alexandre Dulaunoy]
+
+* [MANIFEST] updated. [Alexandre Dulaunoy]
+
+* [dark-web] typo fixed (on value) [Alexandre Dulaunoy]
+
+* [dark-web] Directory service added. [Alexandre Dulaunoy]
+
+* [doc] README updated with 3 new taxonomies. [Alexandre Dulaunoy]
+
+* [doc] updated. [Alexandre Dulaunoy]
+
+* [MANIFEST] updated. [Alexandre Dulaunoy]
+
+* [manifest] updated. [Alexandre Dulaunoy]
+
+* [dark-web] hitman services added. [Alexandre Dulaunoy]
 
 * [vulnerability] sighting predicate added as described on https://vulnerability.circl.lu/ [Alexandre Dulaunoy]
 
@@ -29,9 +60,29 @@
 
 ### Fix
 
+* [organizational-cyber-harm] namespace was incorrect. [Alexandre Dulaunoy]
+
 * [vulnerability] sighting added. [Alexandre Dulaunoy]
 
 ### Other
+
+* Merge branch 'vxsh4d0w-patch-9' [Alexandre Dulaunoy]
+
+* Update machinetag.json. [V]
+
+  fixed typo errors
+
+* Create machinetag.json. [V]
+
+  Created a new taxonomy related to the unified ransomware kill chain.
+
+* Merge pull request #287 from vxsh4d0w/patch-8. [Alexandre Dulaunoy]
+
+  Update machinetag.json
+
+* Update machinetag.json. [V]
+
+  Updated predicate about Targets
 
 * Merge pull request #286 from Terrtia/main. [Alexandre Dulaunoy]
 

@@ -2,6 +2,413 @@ Changelog
 =========
 
 
+%%version%% (unreleased)
+------------------------
+
+Fix
+~~~
+- [INSTALL.sh] removed checksum check. [Andras Iklody]
+
+
+v2.4.201 (2024-12-16)
+---------------------
+
+Fix
+~~~
+- [leftover] removed. [iglocska]
+
+Other
+~~~~~
+- Merge branch '2.4-develop' into 2.4. [iglocska]
+- Merge pull request #10080 from d0t1q/2.4. [Andras Iklody]
+
+  fix: 2.4 install.sh script git clone reference
+- Update INSTALL.sh. [d0t1q]
+
+  specified branch name for git clone
+
+
+v2.5.3 (2024-12-16)
+-------------------
+
+New
+~~~
+- [ui:editor] Added new plugin `placeholder` that show the placeholder
+  in codemirror elements. [Sami Mokaddem]
+
+  - Fix #10071
+- [ui:editor] Added new plugin `placeholder` that show the placeholder
+  in codemirror elements. [Sami Mokaddem]
+
+  - Fix #10071
+- [event-report-template-variable] Added instance-wide report variable.
+  [Sami Mokaddem]
+
+  - Changed behavior of template variables. With variables being saved as user setting
+  only the creator of the report can use/see them
+  - This change makes it so that only site-admin can create/edit/remove them but every
+  other user can now use/see them
+
+Changes
+~~~~~~~
+- [PyMISP] Bump version. [Raphaël Vinot]
+- [stats] Added # objects on the instance. [Sami Mokaddem]
+- [stats] Added # objects on the instance. [Sami Mokaddem]
+- [version] bump. [iglocska]
+- [db schema] updated. [iglocska]
+- [db schema] updated. [iglocska]
+- [server settings] made more settings CLI only. [iglocska]
+- [security] collection ACL enforcement on index fixed. [iglocska]
+
+  - as reported by Jeroen Pinoy
+- [internal] Manual cleanup is not necessary anymore for
+  simdjson_decode. [Jakub Onderka]
+- [security] collection ACL enforcement on index fixed. [iglocska]
+
+  - as reported by Jeroen Pinoy
+- [LdapAuth] use relative path to load config in test script. [Luciano
+  Righetti]
+- [LdapAuth] add defaults. [Luciano Righetti]
+- [OTP] mention authenticator app in enter OTP label. [Jeroen Pinoy]
+- [EventReport] Fix typo, slightly clarify set file alias success and
+  error messages. [Jeroen Pinoy]
+- [internal] Speedup fetching virtual fields. [Jakub Onderka]
+- [internal] Use faster methods in attribute validation. [Jakub Onderka]
+- [internal] Use faster algo for internal mysql cache. [Jakub Onderka]
+- [EventReport] Fix typo, slightly clarify set file alias success and
+  error messages. [Jeroen Pinoy]
+- [event-repport:uploadPicture] Only site-admins can upload local
+  instance picture. [Sami Mokaddem]
+
+  - Also added notice message
+- [server] Added UI element and API export to show bound sync users -
+  Added to /users/index & /users/view - Added to /servers/index. [Sami
+  Mokaddem]
+- [analyst-data] Move distribution default check to construct() and
+  added new setting. [Sami Mokaddem]
+- [eventreport] Move distribution default check to construct() [Sami
+  Mokaddem]
+- [event:row_object] Truncate long text in object's highlighted
+  attribute. [Sami Mokaddem]
+- [misp object] move distribution default check to construct()
+  [iglocska]
+
+  - otherwise the schema's default will already be set before the beforeValidate() / beforeSave() checks
+- [galaxy:index] Made notices about unknown clusters less alarming.
+  [Sami Mokaddem]
+- [server] Added UI element and API export to show bound sync users -
+  Added to /users/index & /users/view - Added to /servers/index. [Sami
+  Mokaddem]
+- [analyst-data] Move distribution default check to construct() and
+  added new setting. [Sami Mokaddem]
+- [eventreport] Move distribution default check to construct() [Sami
+  Mokaddem]
+- [misp object] move distribution default check to construct()
+  [iglocska]
+
+  - otherwise the schema's default will already be set before the beforeValidate() / beforeSave() checks
+- [event:row_object] Truncate long text in object's highlighted
+  attribute. [Sami Mokaddem]
+- [internal] Use simdjson_is_valid_utf8 for unicode validation. [Jakub
+  Onderka]
+- [db defaults] removed mentions of postgres. [iglocska]
+- [galaxy:index] Made notices about unknown clusters less alarming.
+  [Sami Mokaddem]
+- [pecl installation] show error but don't block the rest of the
+  installation. [iglocska]
+
+  - pecl install flags existing installations as a failure, rather than a "nothing to do" state
+  - this change will cause it to soft fail now during the installation
+- [install/upgrade] scripts updated to force the redis serializer to
+  default to JSON. [iglocska]
+
+  - related to #10017
+
+Fix
+~~~
+- [leftover] removed. [iglocska]
+- [appModel] Bad merge. [Sami Mokaddem]
+- [ACL] entry added. [iglocska]
+- [galaxy-cluster:upload-router] Enforce usage of alias to ensure
+  correct table usage. [Sami Mokaddem]
+- [db_schema] merge fail fixed. [iglocska]
+- [galaxy-cluster:upload-router] Enforce usage of alias to ensure
+  correct table usage. [Sami Mokaddem]
+- [modules] restrictions applied correctly on multiple functionalities.
+  [iglocska]
+
+  - as reported by Jeroen Pinoy
+- [security] analysis file upload sanitisation. [iglocska]
+
+  - Added sanitisation and error handling for the uploaded file
+  - filename restrictions added to avoid tampering
+
+  - As reported by Ianis Bernard from Acylia (https://www.acylia.com)
+- [ACL] component - removed unused entries. [iglocska]
+- [forms] notice message sanitisation. [iglocska]
+
+  - currently not an issue, but to prevent future ones
+
+  - as reported by Jeroen Pinoy
+- [collections] fixed redirects after adding element / deleting element.
+  [iglocska]
+- [collections] UI fixes. [iglocska]
+
+  - don't mess up the collection type on edit
+  - display the sharing groups correctly
+  - don't try to do weird ajax redirect magic
+
+  - as reported by Jeroen Pinoy
+- [security] analysis file upload sanitisation. [iglocska]
+
+  - Added sanitisation and error handling for the uploaded file
+  - filename restrictions added to avoid tampering
+
+  - As reported by Ianis Bernard from Acylia (https://www.acylia.com)
+- [ACL] component - removed unused entries. [iglocska]
+- [forms] notice message sanitisation. [iglocska]
+
+  - currently not an issue, but to prevent future ones
+
+  - as reported by Jeroen Pinoy
+- [collections] fixed redirects after adding element / deleting element.
+  [iglocska]
+- [checkout] function pointed to wrong branch. [iglocska]
+
+  - as reported by Jeroen Pinoy
+- [collections] internal server error thrown on view if not site admin.
+  [Jeroen Pinoy]
+- [event-report:tagging] Allow host-org to add/remove local tags. [Sami
+  Mokaddem]
+- [CRUDComponent:add] Added missing $this->create call ensuring model's
+  default are initialized. [Sami Mokaddem]
+- [collections] UI fixes. [iglocska]
+
+  - don't mess up the collection type on edit
+  - display the sharing groups correctly
+  - don't try to do weird ajax redirect magic
+
+  - as reported by Jeroen Pinoy
+- [MVC] move business logic to model instead of private functions in
+  controller. [iglocska]
+- [security] Protected events rework. [iglocska]
+
+  - Stricter requirements for modifying protected events
+  - Fixed a bug that ignores the protected event checks on pull
+  - Added the ability to validate protected events within signed feeds
+  - Added the ability to validate MISP JSON file uploads
+  - Added a new endpoint that allows users to ask MISP to sign POSTed data with the instance key
+    - by default only available to site admins
+    - added new role permission to extend it to other users
+    - added host org only requirement
+
+  - Multiple fixes to issues as kindly reported by Jeroen Pinoy
+- Check reader user bind before search. [Luciano Righetti]
+- [serverSettings] mismatch in description of MISP.disablerestalert.
+  [Jeroen Pinoy]
+- Typo in serverSetting related error message. [Jeroen Pinoy]
+- Typos in warning messages triggered when you go to openapi, but don't
+  have API key or access. [Jeroen Pinoy]
+- Typo in description of Security.check_sec_fetch_site_header setting.
+  [Jeroen Pinoy]
+- [UI] wrong closing html tag on hard/soft delete form for a button.
+  [Jeroen Pinoy]
+- [collections] internal server error thrown on view if not site admin.
+  [Jeroen Pinoy]
+- [LdapAuth] use configurable email field. [Luciano Righetti]
+- [security] Fixed stored xss when exporting custom clusters into the
+  misp-galaxy format. [Sami Mokaddem]
+
+  - As reported by fukusuket (Fukusuke Takahashi)
+- [security] Fixed stored XSS in editor interface for ad-hoc workflows.
+  [Sami Mokaddem]
+
+  - As reported by fukusuket (Fukusuke Takahashi)
+- [event-report:tagging] Allow host-org to add/remove local tags. [Sami
+  Mokaddem]
+- [stix1 import] Avoiding issues with STIX Packages having no title.
+  [Christian Studer]
+- [CRUDComponent:add] Added missing $this->create call ensuring model's
+  default are initialized. [Sami Mokaddem]
+- [bookmarks] delete bookmark buttons on index page not working. [Jeroen
+  Pinoy]
+- [internal] db_schema 133. [Jakub Onderka]
+- [internal] Try to fix analyst data distribution. [Jakub Onderka]
+- [bookmark:add] Allow org-admin to create bookmark for their org on
+  /add. [Sami Mokaddem]
+- [bookmarks] delete bookmark buttons on index page not working. [Jeroen
+  Pinoy]
+- [bookmark:add] Allow org-admin to create bookmark for their org on
+  /add. [Sami Mokaddem]
+- [analyst-data:construct] Do not try to access the schema of non-
+  existing table anymore. [Sami Mokaddem]
+- [event-report:managedImportedPictures] Added support of reference
+  detection for aliases picture usage. [Sami Mokaddem]
+- [security] Fixed stored xss when exporting custom clusters into the
+  misp-galaxy format. [Sami Mokaddem]
+
+  - As reported by fukusuket (Fukusuke Takahashi)
+- [security] Fixed stored XSS in editor interface for ad-hoc workflows.
+  [Sami Mokaddem]
+
+  - As reported by fukusuket (Fukusuke Takahashi)
+- [security] Fixed stored xss when exporting custom clusters into the
+  misp-galaxy format. [Sami Mokaddem]
+
+  - As reported by fukusuket (Fukusuke Takahashi)
+- [security] Fixed stored XSS in editor interface for ad-hoc workflows.
+  [Sami Mokaddem]
+
+  - As reported by fukusuket (Fukusuke Takahashi)
+- [login] updates user's last login field, even when blocked by the user
+  being disabled. [iglocska]
+
+  thanks @wachizungu for the heads-up!
+- [login] don't log a successful login when the process is blocked by
+  the user being disabled. [iglocska]
+
+  - it created confusing entries before
+- [AnalystData] single string org name filter does not work, fix
+  returning all analyst data when org does not exist. [Luciano Righetti]
+- [MVC] move business logic to model instead of private functions in
+  controller. [iglocska]
+- [security] Protected events rework. [iglocska]
+
+  - Stricter requirements for modifying protected events
+  - Fixed a bug that ignores the protected event checks on pull
+  - Added the ability to validate protected events within signed feeds
+  - Added the ability to validate MISP JSON file uploads
+  - Added a new endpoint that allows users to ask MISP to sign POSTed data with the instance key
+    - by default only available to site admins
+    - added new role permission to extend it to other users
+    - added host org only requirement
+
+  - Multiple fixes to issues as kindly reported by Jeroen Pinoy
+- [security] Fixed stored xss when exporting custom clusters into the
+  misp-galaxy format. [Sami Mokaddem]
+
+  - As reported by fukusuket (Fukusuke Takahashi)
+- [security] Fixed stored XSS in editor interface for ad-hoc workflows.
+  [Sami Mokaddem]
+
+  - As reported by fukusuket (Fukusuke Takahashi)
+- [sync check] fixed for 2.4<->2.5 compatibility. [iglocska]
+- [upgrade script] make pecl installation fail gracefully. [iglocska]
+
+  - it also considers an installation a failure if the package already exists and is current....
+
+Other
+~~~~~
+- Merge branch 'develop' into 2.5. [iglocska]
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge branch '2.4-develop' of github.com:MISP/MISP into 2.4-develop.
+  [iglocska]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [iglocska]
+- Merge remote-tracking branch 'origin/develop' into develop. [Sami
+  Mokaddem]
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge branch 'develop' of github.com:MISP/MISP into develop.
+  [iglocska]
+- Merge pull request #10099 from JakubOnderka/json-tool-no-cleanup.
+  [Jakub Onderka]
+
+  chg: [internal] Manual cleanup is not necessary anymore for simdjson_decode
+- Merge pull request #10082 from Wachizungu/fix-collections-mayview-
+  typo. [Jakub Onderka]
+
+  fix: [collections] internal server error thrown on view if not site a…
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Add: [LdapAuth] test/diagnostics script. [Luciano Righetti]
+- Merge pull request #10097 from Wachizungu/fix-disablerestalert-
+  description. [Andras Iklody]
+
+  fix: [serverSettings] mismatch in description of MISP.disablerestalert
+- Merge pull request #10093 from Wachizungu/fix-witch-typos. [Andras
+  Iklody]
+
+  fix: typo in serverSetting related error message
+- Merge pull request #10089 from Wachizungu/mention-authenticator-app-
+  otp. [Andras Iklody]
+
+  chg: [OTP] mention authenticator app in enter OTP label
+- Merge pull request #10088 from Wachizungu/fix-typos-in-openapi-
+  warnings-messages. [Andras Iklody]
+
+  fix: typos in warning messages triggered when you go to openapi, but …
+- Merge pull request #10087 from Wachizungu/fix-typo-check-sec-fetch-
+  site-header-setting-description. [Andras Iklody]
+
+  fix: typo in description of Security.check_sec_fetch_site_header setting
+- Merge pull request #10086 from Wachizungu/fix-button-closing-tag.
+  [Andras Iklody]
+
+  fix: [UI] wrong closing html tag on hard/soft delete form for a button
+- Merge pull request #10081 from vincenzocaputo/add-property-config-
+  aadauth. [Luciano Righetti]
+
+  Add config option to select the property to use for Azure AD authentication
+- Add auth_property_name attribute and checks. [Vincenzo Caputo]
+- Update README.md. [Vincenzo Caputo]
+- Merge branch 'pr-10059' into 2.4-develop. [Sami Mokaddem]
+- Merge branch 'geoip' into develop. [iglocska]
+- Catch errors during opening of GeoIP database. [Computer Network
+  Investigation]
+
+  When the GeoIp2 database cannot be opened, e.g. due to a filesystem error, an InvalidArgumentException may be thrown during creation of the Reader object. Since this is not caught, users cannot be authenticated when this issue appears, throwing a HTTP 500 error in the process.
+
+  Simply adding the creation of the Reader to the already existing try/catch-block fixes it.
+- Merge pull request #10056 from JakubOnderka/speedup-vol3. [Jakub
+  Onderka]
+
+  Speedup vol3
+- Merge pull request #10073 from JakubOnderka/fix-analyst-data-
+  distribution. [Jakub Onderka]
+
+  fix: [internal] Try to fix analyst data distribution
+- Merge branch 'pr-10069' into develop. [Sami Mokaddem]
+- Merge remote-tracking branch 'origin/2.4-develop' into pr-10069. [Sami
+  Mokaddem]
+- Merge branch 'feature/eventreport-template-var-global' into
+  2.4-develop. [Sami Mokaddem]
+- Merge branch 'feature/eventreport-template-var-global' into develop.
+  [Sami Mokaddem]
+- Merge pull request #10060 from MISP/add-tls-support-ldapauth. [Luciano
+  Righetti]
+
+  Add tls support ldapauth
+- Add: [LdapAuth] support for TLS/LDAPS. [Luciano Righetti]
+- Merge remote-tracking branch 'origin/develop' into develop. [Sami
+  Mokaddem]
+- Merge pull request #10022 from JakubOnderka/simdjson-fixes. [Jakub
+  Onderka]
+
+  chg: [internal] Use simdjson_is_valid_utf8 for unicode validation
+- Merge branch '2.4-develop' into develop. [iglocska]
+- Merge branch '2.4' into 2.4-develop. [iglocska]
+- Update database.default.php. [Andras Iklody]
+- Merge pull request #10051 from MISP/openapi-analyst-data-minimal.
+  [Luciano Righetti]
+
+  [openapi] document analystData/indexMinimal endpoint
+- Add: [AnalystData] add openapi docs for /analystData/indexMinimal
+  endpoint. [Luciano Righetti]
+- Merge branch '2.5' into develop. [iglocska]
+- Merge branch '2.5' into develop. [iglocska]
+- Merge branch '2.5' into develop. [iglocska]
+- Merge branch '2.5' of github.com:MISP/MISP into 2.5. [iglocska]
+- Merge pull request #10078 from bernhardreiter/patch-1. [Andras Iklody]
+
+  Fix README.md typo in section Installation
+- Fix README.md typo in section Installation. [Bernhard E. Reiter]
+- Merge branch 'develop' into 2.5. [iglocska]
+- Merge branch 'minor_version_check' into develop. [iglocska]
+- Fix(connection test): check not working for minor version upgrade.
+  [Andreas B. Berg]
+
+
 v2.5.2 (2024-11-19)
 -------------------
 

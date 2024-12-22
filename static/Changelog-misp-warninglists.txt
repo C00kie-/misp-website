@@ -5,6 +5,8 @@
 
 ### Changes
 
+* [lists] updated. [Alexandre Dulaunoy]
+
 * [zscaler] add the missing script for zscaler source generation. [Alexandre Dulaunoy]
 
 * [update] updated. [Alexandre Dulaunoy]
@@ -14,6 +16,26 @@
 * [warning-lists] updated. [Alexandre Dulaunoy]
 
 ### Other
+
+* Merge pull request #292 from cudeso/patch-2. [Alexandre Dulaunoy]
+
+  Update security-provider-blogpost list.json
+
+* Update security-provider-blogpost list.json. [Koen Van Impe]
+
+  A "link" attribute should not trigger the match.
+
+  (other warninglists such as banksites, url shorteners etc. do not include the "link" attribute)
+
+* Merge pull request #291 from karenyousefi/main. [Alexandre Dulaunoy]
+
+  add
+
+* Update to V20. [Karen Yousefi]
+
+* Update list.json. [Karen Yousefi]
+
+  update to V8
 
 * Merge branch 'main' of github.com:MISP/misp-warninglists. [Alexandre Dulaunoy]
 

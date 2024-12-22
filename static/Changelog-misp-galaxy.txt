@@ -5,6 +5,44 @@
 
 ### Changes
 
+* [doc] README updated. [Alexandre Dulaunoy]
+
+* [sigma] updated. [Alexandre Dulaunoy]
+
+* [mitre attack] updated to the latest version. [Alexandre Dulaunoy]
+
+* [doc] README updated. [Alexandre Dulaunoy]
+
+* [ransomware] updated. [Alexandre Dulaunoy]
+
+* [README] updated. [Alexandre Dulaunoy]
+
+* [threat-actor] remove duplicate. [Rony]
+
+* [threat-actor] more references. [Rony]
+
+* [threat-actor] remove duplicate. [Rony]
+
+* [threat-actor] add PwC refrences of COLDRIVER. [Rony]
+
+* [doc] README updated. [Alexandre Dulaunoy]
+
+* [malpedia] more duplicates removed. [Alexandre Dulaunoy]
+
+* [doc] updated. [Alexandre Dulaunoy]
+
+* [producer] added several security companies. [rectifyq]
+
+* [threat-actor] Gorilla botnet added. [Alexandre Dulaunoy]
+
+* [doc] README updated. [Alexandre Dulaunoy]
+
+* [malpedia] updated to the latest version. [Alexandre Dulaunoy]
+
+* [index] updated. [Alexandre Dulaunoy]
+
+* [mitre-atlas] updated. [Alexandre Dulaunoy]
+
 * [README] updated. [Alexandre Dulaunoy]
 
 * [README] updated. [Alexandre Dulaunoy]
@@ -69,11 +107,51 @@
 
 ### Fix
 
+* [malpedia] duplicates removed. [Alexandre Dulaunoy]
+
 * [producer] must be an array. [Alexandre Dulaunoy]
 
 * [producer] refs are arrays. [Alexandre Dulaunoy]
 
 ### Other
+
+* Merge branch 'r0ny123-patch-1' [Alexandre Dulaunoy]
+
+* Merge branch 'patch-1' of https://github.com/r0ny123/misp-galaxy into r0ny123-patch-1. [Alexandre Dulaunoy]
+
+* Update threat-actor.json. [Rony]
+
+* Merge branch 'rectifyq-main' [Alexandre Dulaunoy]
+
+* Merge branch 'main' of https://github.com/rectifyq/misp-galaxy into rectifyq-main. [Alexandre Dulaunoy]
+
+* Merge pull request #1035 from Mathieu4141/threat-actors/a3284f2a-3ca4-4c0c-a1fc-758cd5f14970. [Alexandre Dulaunoy]
+
+  [threat actors] Add 2 actors
+
+* [threat actors] Update README. [Mathieu4141]
+
+* [threat-actors] Add Water Barghest. [Mathieu4141]
+
+* [threat-actors] Add BrazenBamboo. [Mathieu4141]
+
+* Merge pull request #1034 from Mathieu4141/threat-actors/613b0dc0-3f4c-44aa-8a3a-fc03ce746171. [Alexandre Dulaunoy]
+
+  [threat actors] Add 5 actors & some aliases
+
+* [threat actors] Update README. [Mathieu4141]
+
+* [threat-actors] Add Kairos. [Mathieu4141]
+
+* [threat-actors] Add TA455. [Mathieu4141]
+
+* [threat-actors] Add SilkSpecter. [Mathieu4141]
+
+* [threat-actors] Add TAG-112. [Mathieu4141]
+
+* [threat-actors] Add UAC-0194. [Mathieu4141]
+
+* [threat-actors] Add WageMole aliases. [Mathieu4141]
 
 * Merge pull request #1033 from Mathieu4141/threat-actors/fa9e8f7c-83a4-4b9d-bfba-b8d52f1db99f. [Alexandre Dulaunoy]
 
